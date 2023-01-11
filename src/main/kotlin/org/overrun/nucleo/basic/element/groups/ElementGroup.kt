@@ -125,9 +125,11 @@ object ElementGroup {
                                     if (row1.rowNum >= 3) {
                                         if (row1.getCell(0).numericCellValue.toInt() == neutron) {
                                             putBoolean("decay", row1.getCell(1).booleanCellValue)
-                                            putDouble("relative_atomic_mass", row.getCell(2).numericCellValue)
-                                            putDouble("mc_half_life", row.getCell(4).numericCellValue)
 
+                                            putDouble("relative_atomic_mass", row.getCell(2).numericCellValue)
+                                            if (row1.getCell(1).booleanCellValue) {
+                                                putDouble("mc_half_life", row.getCell(4).numericCellValue)
+                                            }
                                         }
                                     }
                                 }

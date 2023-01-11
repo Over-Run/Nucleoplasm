@@ -1,11 +1,8 @@
 package org.overrun.nucleo;
 
-import kotlinx.serialization.descriptors.SerialKind;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-
 import net.minecraft.util.Identifier;
-import org.overrun.nucleo.basic.element.DecaySettings;
 import org.overrun.nucleo.basic.element.groups.ElementGroup;
 import org.overrun.nucleo.basic.element.remake.RegItem;
 import org.overrun.nucleo.chemistry.equipment.block.ChemicalBlocks;
@@ -13,8 +10,6 @@ import org.overrun.nucleo.command.SelectEvent;
 import org.overrun.nucleo.command.SetBlocksCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.*;
 
 /**
  * {@code 从现在开始配置基础完毕}

@@ -6,7 +6,6 @@ import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
-import org.overrun.nucleo.basic.element.remake.RegItem;
 import org.overrun.nucleo.chemistry.equipment.block.ChemicalBlocks;
 
 import static org.overrun.nucleo.basic.element.remake.RegItem.elementera;
