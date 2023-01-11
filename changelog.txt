@@ -1,0 +1,9 @@
+2022/9/29
+  Create fabric mod program
+  Fix gradle version and name from fabric-example
+  Set the module name from the template to complete
+2022/9/30
+  The periodic table of elements is basically filled
+  fix bugs
+2022/10/22
+  Recreate the item and add decay

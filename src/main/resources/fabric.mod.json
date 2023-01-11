@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "nucleoplasm",
+  "version": "${version}",
+
+  "name": "Nucleoplasm",
+  "description": "Nucleoplasm made in China, make for Overrun Organization",
+  "authors": [
+    "baka4n"
+  ],
+  "contributors": [
+    "Members of Overrun Organization"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Over-Run",
+    "sources": "https://github.com/Over-Run/Nucleoplasm"
+  },
+
+  "license": "GPL-3.0-only",
+  "icon": "assets/nucleoplasm/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.overrun.nucleo.Nucleoplasm"
+    ],
+    "client": [
+      "org.overrun.nucleo.Client"
+    ],
+    "server": [
+
+    ],
+    "fabric-datagen": [
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  }
+}
