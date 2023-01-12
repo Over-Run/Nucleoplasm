@@ -7,3 +7,5 @@
   fix bugs
 2022/10/22
   Recreate the item and add decay
+2023/1/12
+  Complete the item classification, complete the element creation, and gradually add the element table

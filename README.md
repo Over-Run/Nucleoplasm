@@ -20,7 +20,7 @@
     - [ ] Organic Compound
     - [ ] Electrodynamics
     - [ ] Quantum Mechanics
-    - [x] Disintegration
+    - [ ] Disintegration
 - [ ] Extends Taskline
     - [ ] Railway Project
     - [ ] Interstellar Project

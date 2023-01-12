@@ -66,7 +66,7 @@ object ElementGroup {
             }
         }
         .build()
-    private val transition_metal: group = groupBuild.builder(toIdentifier("transition_elements"))
+    private val transition_metal: group = groupBuild.builder(toIdentifier("transition_metal"))
         .icon {
             ItemStack(items.item).apply {
                 nbt = NbtCompound().apply { putProton(21) }
