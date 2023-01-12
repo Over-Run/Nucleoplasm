@@ -1,84 +1,133 @@
 package org.overrun.nucleo.basic.element.groups
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
-import org.overrun.nucleo.Nucleoplasm
-import org.overrun.nucleo.Nucleoplasm.logger
-import org.overrun.nucleo.api.utils.loadPoi.PoiDefine
-import org.overrun.nucleo.basic.element.remake.RegItem.elementera
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup as groupBuild
 import net.minecraft.item.ItemGroup as group
+import org.overrun.nucleo.Nucleoplasm.identifier as toIdentifier
+import org.overrun.nucleo.Nucleoplasm.logger as nucleoplasm_log
+import org.overrun.nucleo.api.utils.loadPoi.PoiDefine as poi
+import org.overrun.nucleo.basic.element.remake.RegItem.elementera as items
 
 // TODO 2023/1/7/16/50 item group
 object ElementGroup {
 //    val jsonDefine = JsonDefine("element/element.json", "element/decay.json")
-    private val group: group = FabricItemGroup.builder(Nucleoplasm.identifier("element"))
+    private val group: group = groupBuild.builder(toIdentifier("element"))
         .icon {
             // h
-            ItemStack(elementera.item).apply {
+            ItemStack(items.item).apply {
                 nbt = NbtCompound().apply { putProton(1) }
             }
         }
         .build()
-    private val gas: group = FabricItemGroup.builder(Nucleoplasm.identifier("gas"))
+    private val gas: group = groupBuild.builder(toIdentifier("gas"))
         .icon {
-            ItemStack(elementera.item).apply {
+            ItemStack(items.item).apply {
                 nbt = NbtCompound().apply { putProton(1) }
             }
         }
         .build()
-    private val liquid: group = FabricItemGroup.builder(Nucleoplasm.identifier("liquid"))
+    private val liquid: group = groupBuild.builder(toIdentifier("liquid"))
         .icon {
-            ItemStack(elementera.item).apply {
+            ItemStack(items.item).apply {
                 nbt = NbtCompound().apply { putProton(53) }
             }
         }
         .build()
-    private val solid: group = FabricItemGroup.builder(Nucleoplasm.identifier("solid"))
+    private val solid: group = groupBuild.builder(toIdentifier("solid"))
         .icon {
-            ItemStack(elementera.item).apply {
+            ItemStack(items.item).apply {
                 //c
                 nbt = NbtCompound().apply { putProton(6) }
             }
         }
         .build()
-    private val metallicElements: group = FabricItemGroup.builder(Nucleoplasm.identifier("metallic_elements"))
+//    private val metallicElements: group = groupBuild.builder(Nucleoplasm.toIdentifier("metallic_elements"))
+//        .icon {
+//            // li
+//            ItemStack(items.item).apply {
+//                nbt = NbtCompound().apply { putProton(3) }
+//            }
+//        }
+//        .build()
+//    private val nonMetallicElements: group =
+//        groupBuild.builder(Nucleoplasm.toIdentifier("non_metallic_elements"))
+//            .icon {
+//                // be
+//                ItemStack(items.item).apply {
+//                    nbt = NbtCompound().apply { putProton(4) }
+//                }
+//            }
+//            .build()
+    private val noble_gas: group = groupBuild.builder(toIdentifier("noble_gas"))
         .icon {
-            // li
-            ItemStack(elementera.item).apply {
-                nbt = NbtCompound().apply { putProton(3) }
-            }
-        }
-        .build()
-    private val nonMetallicElements: group =
-        FabricItemGroup.builder(Nucleoplasm.identifier("non_metallic_elements"))
-            .icon {
-                // be
-                ItemStack(elementera.item).apply {
-                    nbt = NbtCompound().apply { putProton(4) }
-                }
-            }
-            .build()
-    private val noble_gas: group = FabricItemGroup.builder(Nucleoplasm.identifier("noble_gas"))
-        .icon {
-            ItemStack(elementera.item).apply {
+            ItemStack(items.item).apply {
                 nbt = NbtCompound().apply { putProton(2) }
             }
         }
         .build()
-    private val transition_elements: group = FabricItemGroup.builder(Nucleoplasm.identifier("transition_elements"))
+    private val transition_metal: group = groupBuild.builder(toIdentifier("transition_elements"))
         .icon {
-            ItemStack(elementera.item).apply {
+            ItemStack(items.item).apply {
                 nbt = NbtCompound().apply { putProton(21) }
             }
         }
         .build()
 
+    private val alkali_metal : group = groupBuild.builder(toIdentifier("alkali_metal"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(3) }
+            }
+        }.build()
+    private val alkali_earth_metal : group = groupBuild.builder(toIdentifier("alkali_earth_metal"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(4) }
+            }
+        }.build()
+    private val other_metal : group = groupBuild.builder(toIdentifier("other_metal"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(13) }
+            }
+        }.build()
+    private val other_non_metallic : group = groupBuild.builder(toIdentifier("other_non_metallic"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(6) }
+            }
+        }.build()
+    private val metalloid : group = groupBuild.builder(toIdentifier("metalloid"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(5) }
+            }
+        }.build()
+    private val halogen : group = groupBuild.builder(toIdentifier("halogen"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(9) }
+            }
+        }.build()
+    private val lanthanide_series : group = groupBuild.builder(toIdentifier("lanthanide_series"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(57) }
+            }
+        }.build()
+    private val actinide_series : group = groupBuild.builder(toIdentifier("actinide_series"))
+        .icon{
+            ItemStack(items.item).apply {
+                nbt = NbtCompound().apply { putProton(89) }
+            }
+        }.build()
+
     private fun NbtCompound.putProton(proton: Int) {
         putInt("proton", proton)
     }
 
-    val work = PoiDefine("element/element.xlsx")
+    private val work = poi("element/element.xlsx")
 
 
     //元素分类分为 金属元素 非金属元素 惰性气体0族
@@ -109,11 +158,11 @@ object ElementGroup {
                             }"
                         )
                     } catch (e: NullPointerException) {
-                        logger.error("$proton isn't reader decay list")
+                        nucleoplasm_log.error("$proton isn't reader decay list")
                     }
                     for (neutron in minNeutron..maxNeutron) {
 
-                        val stack = ItemStack(elementera.item).copy()
+                        val stack = ItemStack(items.item).copy()
                         stack.nbt = NbtCompound().apply {
                             putInt("proton", proton)
                             putInt("neutron", neutron)
@@ -138,8 +187,8 @@ object ElementGroup {
                             }
                             println()
                         }
-                        addGroups(proton, stack)
-                        addGroup(group, stack)
+                        addGroup(group, stack)//汇入总元素列表
+                        addGroups(proton, stack)//单独分组
 
 //                        bw.write(
 //                            "  \"item.nucleoplasm." +
@@ -161,36 +210,31 @@ object ElementGroup {
     }
 
     private fun addGroups(proton: Int, stack: ItemStack?) {
-        when (proton) {
-            35, 53, 80 -> addGroup(liquid, stack)
-            1, 2,
-            in 7..10,
-            17, 18, 36, 54, 86 -> addGroup(gas, stack)
 
-            else -> addGroup(solid, stack)//固体
-        }
-
-        //判断惰性气体 金属 非金属
-        when (proton) {
-            2, 10, 18, 36, 54, 86, 118 -> addGroup(noble_gas, stack)//惰性气体
-            3, 11, 12, 13,
-            in 19..32,
-            in 37..51,
-            in 55..84,
-            in 87..112 -> addGroup(metallicElements, stack)//金属元素
-            5, 6, 14, 15, 16, 33, 34, 35, 52, 53, 85
-            -> addGroup(nonMetallicElements, stack)//非金属元素
-            else -> {}
-        }
-        //判断是否为过渡元素
-        when (proton) {
+        when(proton) {
+            3,11,19,37,55,87 -> addGroup(alkali_metal, stack)//碱金
+            4,12,20,38,56,88 -> addGroup(alkali_earth_metal, stack)//碱土金
             in 21..30,
             in 39..48,
-            in 57..80,
-            in 89..112 -> {
-                addGroup(transition_elements, stack)
-            }
+            in 72..80,
+            in 104..112 -> addGroup(transition_metal, stack)//过渡金
+            13,31,49,50,81,82,83,
+            in 113..116 -> addGroup(other_metal, stack)//其他金属
+            5,14,32,33,51,52,84 -> addGroup(metalloid, stack)//类金属
+            6,7,8,15,16,34 -> addGroup(other_non_metallic, stack)//其他非金属
+            9,17,35,53,85,117 -> addGroup(halogen, stack)//卤素
+            2, 10, 18, 36, 54, 86, 118 -> addGroup(noble_gas, stack)//惰性气体
+            in 57..71 -> addGroup(lanthanide_series, stack)//镧系
+            in 89..103 -> addGroup(actinide_series, stack)//锕系
             else -> {}
+        }
+
+        when (proton) {
+            35, 53, 80 -> addGroup(liquid, stack)//液体
+            1, 2,
+            in 7..10,
+            17, 18, 36, 54, 86 -> addGroup(gas, stack)//气体
+            else -> addGroup(solid, stack)//固体
         }
     }
 }
