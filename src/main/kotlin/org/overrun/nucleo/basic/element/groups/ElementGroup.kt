@@ -2,6 +2,7 @@ package org.overrun.nucleo.basic.element.groups
 
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
+import org.overrun.nucleo.basic.element.item.ElementItem
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup as groupBuild
 import net.minecraft.item.ItemGroup as group
 import org.overrun.nucleo.Nucleoplasm.identifier as toIdentifier
@@ -175,10 +176,43 @@ object ElementGroup {
                                         if (row1.getCell(0).numericCellValue.toInt() == neutron) {
                                             putBoolean("decay", row1.getCell(1).booleanCellValue)
 
-                                            putDouble("relative_atomic_mass", row.getCell(2).numericCellValue)
-                                            if (row1.getCell(1).booleanCellValue) {
-                                                putDouble("mc_half_life", row.getCell(4).numericCellValue)
+                                            putDouble("relative_atomic_mass", row1.getCell(2).numericCellValue)
+
+                                            putDouble("mc_half_life", row1.getCell(4).numericCellValue)
+
+                                            val outStacks = ArrayList<ItemStack?>()
+                                            row1.getCell(5).stringCellValue.apply {
+                                                if (contains(",")) {
+                                                    split(",").forEach { s ->
+                                                        val o_p: Int
+                                                        val o_n: Int
+                                                        s.split("_", limit = 2).also {
+                                                            o_p = it[0].toInt()
+                                                            o_n = it[1].toInt()
+                                                        }
+                                                        work.workbook.getSheet(o_p.toString()).forEach { row2 ->
+                                                            if (row2.getCell(0).numericCellValue.toInt() == o_n) {
+                                                                val itemStack = ItemStack(items.item).copy()
+                                                                itemStack.nbt = NbtCompound().apply {
+                                                                    putInt("proton", o_p)
+                                                                    putInt("neutron", o_n)
+                                                                    putString("translate", work.workbook.getSheet("nt").getRow(o_p - 2).getCell(3).stringCellValue)
+                                                                    putString("font", "nucleoplasm:uniform")
+                                                                    putString("abbreviation", work.workbook.getSheet("nt").getRow(o_p - 2).getCell(6).stringCellValue)
+                                                                    putBoolean("decay", row2.getCell(1).booleanCellValue)
+
+                                                                    putDouble("relative_atomic_mass", row2.getCell(2).numericCellValue)
+                                                                    if (row1.getCell(1).booleanCellValue) {
+                                                                        putDouble("mc_half_life", row2.getCell(4).numericCellValue)
+                                                                    }
+                                                                }
+                                                                outStacks.add(itemStack)
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
+                                            (stack.item as ElementItem).decayOut["${proton}_${neutron}"] = outStacks
                                         }
                                     }
                                 }
