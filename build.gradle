@@ -1,4 +1,4 @@
 
 
-group 'org.overrun'
-version '1.0-SNAPSHOT'
+group "$groupId"
+version "$mod_version"
