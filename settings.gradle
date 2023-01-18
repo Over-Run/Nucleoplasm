@@ -1,17 +1,38 @@
 pluginManagement {
     repositories {
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
-        mavenLocal()
-        mavenCentral()
         gradlePluginPortal()
+        maven {
+            url = 'https://maven.fabric.net/'
+            name = "Fabric"
+        }
+
+        maven {
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+            name = 'Sponge Mixin Maven'
+        }
+
+        maven {
+            url = 'https://maven.minecraftforge.net'
+            name = 'forge'
+        }
+
+        maven {
+            url = 'https://maven.parchmentmc.org'
+            name = "Parchment MC"
+        }
+
+        maven {
+            url = "https://maven.quiltmc.org/repository/release/"
+            name = "quilt"
+        }
     }
 
-    plugins {
-        id 'fabric-loom' version loom_version
-        id 'maven-publish'
-        id "org.jetbrains.kotlin.jvm" version kotlin_version
-    }
 }
+
+rootProject.name = 'Nucleoplasm'
+include 'Basic1.19.3'
+include 'Forge1.19.3'
+include 'Fabric1.19.3'
+project(":Basic1.19.3")
+//project(":Forge1.19.3").projectDir = file "./1.19.3/Forge"
+//project(":Fabric1.19.3").projectDir = file "./1.19.3/Fabric"
