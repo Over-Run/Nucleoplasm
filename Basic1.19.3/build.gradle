@@ -12,14 +12,14 @@ minecraft {
     accessWideners(project.file("src/main/resources/nucleoplasm.accesswidener"))
 }
 
-group 'org.overrun'
-version '1.0-SNAPSHOT'
+group groupId
+version mod_version
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    forgeFlower("org.quiltmc:quiltflower:1.9.0")
+//    forgeFlower("org.quiltmc:quiltflower:1.9.0")
     compileOnly("org.spongepowered:mixin:0.8.5")
 }

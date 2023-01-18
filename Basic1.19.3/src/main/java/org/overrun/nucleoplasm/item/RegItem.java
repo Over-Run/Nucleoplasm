@@ -1,32 +1,40 @@
 package org.overrun.nucleoplasm.item;
 
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import org.overrun.nucleoplasm.api.NRegistry;
 
+import java.util.Locale;
 import java.util.function.Function;
 
-import static net.minecraft.world.item.Items.registerItem;
-import static org.overrun.nucleoplasm.Basic.mod_id;
+import static org.overrun.nucleoplasm.Basic.MOD_ID;
 
 public enum RegItem {
     elementera(ElementItem::new);
+
     private final ElementItem item;
-    private final Identifier id;
+    private final String regName;
 
-    RegItem(Function<ElementItem.Settings, ElementItem> item) {
-
-        this.item = item.apply(new ElementItem.Settings());
-        this.id = new Identifier(mod_id, name());
+    RegItem(Function<Item.Properties, ElementItem> item) {
+        this.item = item.apply(new Item.Properties());
+        this.regName = name().toLowerCase(Locale.ROOT);
     }
 
-    public static void init() {
+    public ElementItem getItem() {
+        return item;
+    }
+
+    public String getRegistryName() {
+        return regName;
+    }
+
+    public static void init(NRegistry registry) {
         for (var v : values()) {
-            registerItem(v.id, v.item);
-        }
-    }
-
-    public static class Identifier extends ResourceLocation {
-        public Identifier(String key, String path) {
-            super(key, path);
+            registry.registerItem(v.regName, v.item);
+//            Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MOD_ID, v.name()), v.item)
+//            Registry.register(BuiltInRegistries.ITEM, v.id, v.item);
         }
     }
 }

@@ -1,5 +1,5 @@
 package org.overrun.nucleoplasm;
 
 public class Basic {
-    public static final String mod_id = "nucleoplasm";
+    public static final String MOD_ID = "nucleoplasm";
 }
