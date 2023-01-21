@@ -1,7 +1,10 @@
 package org.overrun.nucleoplasm;
 
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.registries.*;
 import org.overrun.nucleoplasm.api.NRegistry;
 
 /**
@@ -11,14 +14,17 @@ import org.overrun.nucleoplasm.api.NRegistry;
  * @since 1.0.0
  */
 public final class ForgeNRegistry implements NRegistry {
-    private final DeferredRegister<Item> itemRegistry;
+    private final RegisterEvent event;
 
-    public ForgeNRegistry(DeferredRegister<Item> itemRegistry) {
-        this.itemRegistry = itemRegistry;
+    public ForgeNRegistry(RegisterEvent event) {
+        this.event = event;
     }
 
     @Override
-    public <T extends Item> T registerItem(String name, T item) {
-        return itemRegistry.register(name, () -> item);
+    public <T extends Item> void registerItem(String name, T item) {
+//        itemRegistry.register(name, () -> item);
+        event.register(ForgeRegistries.Keys.ITEMS, h -> {
+            h.register(new ResourceLocation("nucleoplasm", name), item);
+        });
     }
 }

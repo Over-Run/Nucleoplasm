@@ -9,5 +9,5 @@ import net.minecraft.world.item.Item;
  * @since 1.0.0
  */
 public interface NRegistry {
-    <T extends Item> T registerItem(String name, T item);
+    <T extends Item> void registerItem(String name, T item);
 }

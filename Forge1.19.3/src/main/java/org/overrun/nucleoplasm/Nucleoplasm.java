@@ -1,7 +1,6 @@
 package org.overrun.nucleoplasm;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 import org.overrun.nucleoplasm.item.RegItem;
 import org.slf4j.Logger;
 
@@ -31,17 +31,26 @@ public class Nucleoplasm {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
 
-
     public Nucleoplasm() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        RegItem.init(new ForgeNRegistry(ITEMS));
+
+
+
+    }
+
+    @SubscribeEvent
+    public void register(RegisterEvent event) {
+        ForgeNRegistry forgeNRegistry = new ForgeNRegistry(event);
+        RegItem.init(forgeNRegistry);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
