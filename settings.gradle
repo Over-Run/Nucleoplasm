@@ -34,5 +34,3 @@ include 'Basic1.19.3'
 include 'Forge1.19.3'
 include 'Fabric1.19.3'
 project(":Basic1.19.3")
-//project(":Forge1.19.3").projectDir = file "./1.19.3/Forge"
-//project(":Fabric1.19.3").projectDir = file "./1.19.3/Fabric"

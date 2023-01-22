@@ -1,5 +1,6 @@
 package org.overrun.nucleoplasm.item;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

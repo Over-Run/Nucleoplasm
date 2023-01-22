@@ -3,6 +3,9 @@ package org.overrun.nucleoplasm;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import org.overrun.nucleoplasm.api.NRegistry;
+import org.overrun.nucleoplasm.api.NRegistryObject;
+
+import java.util.function.Supplier;
 
 /**
  * forge NRegistry
@@ -18,7 +21,7 @@ public final class ForgeNRegistry implements NRegistry {
     }
 
     @Override
-    public <T extends Item> T registerItem(String name, T item) {
-        return itemRegistry.register(name, () -> item);
+    public <T extends Item> NRegistryObject<T> registerItem(String name, Supplier<T> item) {
+        return new ForgeNRegistryObject<>(name, itemRegistry.register(name, item));
     }
 }
