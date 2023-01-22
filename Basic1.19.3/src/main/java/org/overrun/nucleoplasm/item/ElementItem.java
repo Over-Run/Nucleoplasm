@@ -29,6 +29,13 @@ public class ElementItem extends Item {
 
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int slot, boolean selected) {
+        CompoundTag tag = stack.hasTag() ? stack.getTag() : null;
+        if (tag != null) {
+            if (tag.contains("create_tick")) {//创建的游戏时间
+                tag.putLong("create_tick", level.getGameTime());
+                stack.setTag(tag);
+            }
+        }
         super.inventoryTick(stack, level, entity, slot, selected);
     }
 
