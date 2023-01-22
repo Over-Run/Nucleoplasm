@@ -74,13 +74,13 @@ public enum NItemGroups {
         itemStack.setTag(tag);
         return itemStack;
     }, NbtAndGroupSettings.metalloid),
-    other_non_metallic(() -> {
+    other_non_metal(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 6);
         itemStack.setTag(tag);
         return itemStack;
-    }, NbtAndGroupSettings.other_non_metallic),
+    }, NbtAndGroupSettings.other_non_metal),
     halogen(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();

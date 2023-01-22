@@ -275,7 +275,7 @@ public enum NbtAndGroupSettings {
     public static final List<ItemStack> noble_gas = new ArrayList<>();
     public static final List<ItemStack> lanthanide_series = new ArrayList<>();
     public static final List<ItemStack> actinide_series = new ArrayList<>();
-    public static final List<ItemStack> other_non_metallic = new ArrayList<>();
+    public static final List<ItemStack> other_non_metal = new ArrayList<>();
 
     public static void init() {
         for (NbtAndGroupSettings value : values()) {
@@ -297,7 +297,7 @@ public enum NbtAndGroupSettings {
                         transition_metal.add(itemStack);
                     case 13, 31, 49, 50, 81, 82, 83, 113, 114, 115, 116 -> other_metal.add(itemStack);
                     case 5, 14, 32, 33, 51, 52, 84 -> metalloid.add(itemStack);
-                    case 6, 7, 8, 15, 16, 34 -> other_non_metallic.add(itemStack);
+                    case 6, 7, 8, 15, 16, 34 -> other_non_metal.add(itemStack);
                     case 9, 17, 35, 53, 85, 117 -> halogen.add(itemStack);
                     case 2, 10, 18, 36, 54, 86, 118 -> noble_gas.add(itemStack);
                     case 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71 ->
