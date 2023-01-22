@@ -14,6 +14,7 @@ import org.overrun.nucleoplasm.Basic;
 
 import java.util.List;
 
+import static net.minecraft.network.chat.Component.nullToEmpty;
 import static net.minecraft.network.chat.Component.translatable;
 
 //核素 元素
@@ -52,7 +53,18 @@ public class ElementItem extends Item {
         assert tag != null;
         if (!tag.isEmpty()) {
             list.add(translatable("item.nucleoplasm.cf"));
-            list.add(Component.nullToEmpty(String.format("%02d", (tag.getInt("proton") + tag.getInt("neutron")))));
+            list.add(nullToEmpty(String.format("%02d", (tag.getInt("proton") + tag.getInt("neutron")))));
+            list.add(nullToEmpty("    %s    ".formatted(tag.getString("abbreviation"))));
+            list.add(nullToEmpty(String.format("%02d", tag.getInt("proton"))));
+            list.add(nullToEmpty(""));
+            list.add(nullToEmpty("decay: " + tag.getBoolean("decay")));
+            list.add(translatable("item.nucleoplasm.ram"));//relative_atomic_mass:
+            list.add(nullToEmpty(String.valueOf(tag.getDouble("relative_atomic_mass"))));
+            list.add(translatable("item.nucleoplasm.mc.half.life")
+                .append(nullToEmpty(String
+                    .valueOf(tag
+                        .getDouble("mc_half_life"))))
+            );
         }
         super.appendHoverText(stack, level, list, flag);
     }
