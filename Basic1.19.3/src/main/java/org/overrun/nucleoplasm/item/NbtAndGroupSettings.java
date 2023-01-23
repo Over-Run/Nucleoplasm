@@ -14,7 +14,7 @@ public enum NbtAndGroupSettings {
         "hydrogen", "ia", "氢"),
     He(2, 1, 8,
         "helium", "zero", "氦"),
-    Li(3, 1, 10,
+    Li(3, 1, 9,
         "lithium", "ia", "锂"),
     Be(4, 2, 12,
         "beryllium", "iia", "铍"),
@@ -276,7 +276,16 @@ public enum NbtAndGroupSettings {
     public static final List<ItemStack> lanthanide_series = new ArrayList<>();
     public static final List<ItemStack> actinide_series = new ArrayList<>();
     public static final List<ItemStack> other_non_metal = new ArrayList<>();
-
+    public static ItemStack get(String str) {
+        for (ItemStack itemStack : element) {
+            CompoundTag tag = itemStack.getTag();
+            assert tag != null;
+            if (str.equals(tag.getString("abbreviation") + tag.getInt("neutron"))) {
+                return itemStack;
+            }
+        }
+        return ItemStack.EMPTY;
+    }
     public static void init() {
         for (NbtAndGroupSettings value : values()) {
             for (int neutron = value.minNeutron; neutron <= value.maxNeutron; neutron++) {
@@ -286,6 +295,17 @@ public enum NbtAndGroupSettings {
                 tag.putInt("neutron", neutron);
                 tag.putString("translate", value.translate);
                 tag.putString("abbreviation", value.name());
+                for (DelayTimeSettings decayTime : DelayTimeSettings.values()) {
+                    if (decayTime.name().equals(value.name()+neutron)) {
+                        tag.putBoolean("delay", decayTime.isDelay());
+                        tag.putDouble("relative_atomic_mass", decayTime.getRelative_atomic_mass());
+                        if (decayTime.isDelay()) {
+                            tag.putString("half_life", decayTime.getHalf_life());
+                            tag.putDouble("mc_half_life", decayTime.getMc_half_life());
+                        }
+                        break;
+                    }
+                }
                 itemStack.setTag(tag);
                 switch (value.proton) {
                     case 3, 11, 19, 37, 55, 87 -> alkali_metal.add(itemStack);

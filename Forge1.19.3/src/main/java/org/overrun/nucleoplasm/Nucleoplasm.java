@@ -6,12 +6,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.overrun.nucleoplasm.api.NDelay;
 import org.overrun.nucleoplasm.item.NItemGroups;
 import org.overrun.nucleoplasm.item.NbtAndGroupSettings;
 import org.overrun.nucleoplasm.item.RegItem;
@@ -46,7 +49,20 @@ public final class Nucleoplasm {
 
 //        MinecraftForge.EVENT_BUS.register(this);
     }
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void tickPlayer(TickEvent.PlayerTickEvent event) {
+        for (int i = 0; i < event.player.getInventory().getContainerSize(); i++) {
+            NDelay.tickEvent(event.player, i);
+        }
+    }
 
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void tickPlayer2(TickEvent.PlayerTickEvent event) {
+
+        for (int i = 0; i < event.player.getInventory().getContainerSize(); i++) {
+            NDelay.tickPlayer2(event.player, i);
+        }
+    }
 //    @SubscribeEvent
 //    private static void commonSetup(final FMLCommonSetupEvent event) {
 //    }

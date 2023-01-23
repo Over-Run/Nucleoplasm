@@ -1,9 +1,12 @@
 package org.overrun.nucleoplasm.item;
 
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -13,9 +16,11 @@ import org.jetbrains.annotations.Nullable;
 import org.overrun.nucleoplasm.Basic;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
-import static net.minecraft.network.chat.Component.nullToEmpty;
-import static net.minecraft.network.chat.Component.translatable;
+import static net.minecraft.network.chat.Component.*;
+import static org.overrun.nucleoplasm.item.DelayTimeSettings.map;
 
 //核素 元素
 
@@ -27,15 +32,75 @@ public class ElementItem extends Item {
         super(properties);
     }
 
+    static {
+        DelayTimeSettings.init();
+    }
+
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int slot, boolean selected) {
-        CompoundTag tag = stack.hasTag() ? stack.getTag() : null;
-        if (tag != null) {
-            if (tag.contains("create_tick")) {//创建的游戏时间
-                tag.putLong("create_tick", level.getGameTime());
-                stack.setTag(tag);
-            }
-        }
+//        CompoundTag compoundTag = stack.hasTag() ? stack.getTag() : null;
+//        if (compoundTag != null) {
+//            if (compoundTag.contains("create_tick")) {//创建的游戏时间
+//                compoundTag.putLong("create_tick", entity.level.getGameTime());
+//                stack.setTag(compoundTag);
+//            }
+//        }
+//        if (entity instanceof Player player) {
+//            CompoundTag tag = player.inventoryMenu.getSlot(slot).getItem().getTag();
+//            if (tag != null) {
+//
+//                if ((level.getGameTime() - tag.getLong("create_tick")) >= tag.getDouble("mc_half_life")) {
+//
+//                    String key = tag.getString("abbreviation") + tag.getInt("neutron");
+////                    player.inventoryMenu.getSlot(slot).remove(player.inventoryMenu.getSlot(slot).getItem().getCount());
+//                    Map<String, NonNullList<ItemStack>> listMap = map.get(key);
+//                    int i = 0;
+//                    double v = new Random().nextDouble(0, 1);
+//                    double t = 0;
+//                    for (String s : listMap.keySet()) {
+//                        System.out.println("c");
+//                        double ran = Double.parseDouble(s.trim());
+//                        t = ran;
+//                        if ((i == 0 && v <= ran) || (v <= ran && v >= t) ) {
+//                            listMap.get(s).forEach(stack1 -> player.drop(stack1, true));
+//                            System.out.println("d");
+//                        }
+//                        i++;
+//                    }
+//                }
+////                if ((level.getGameTime() - tag.getLong("create_tick")) >= tag.getDouble("mc_half_life")) {
+////                    for (DelayTimeSettings value : DelayTimeSettings.values()) {
+////                        double d = 1;
+////                        if (value.name().equals(tag.getString("abbreviation")+tag.getInt("neutron"))) {
+////                            for (String s : value.getDelay_out()) {
+////                                String[] split = s.split(",");
+////                                double ran = Double.parseDouble(split[1].trim());
+////                                double v = new Random().nextDouble(0,1);
+////                                double t = d;
+////                                d = d - v;
+////                                inventoryMenu.getSlot(slot).remove(inventoryMenu.getSlot(slot).getItem().getCount());
+////                                if (ran > d && ran <= t) {
+////                                    String[] split1 = split[0].split(":");
+////                                    for (String s1 : split1) {
+////                                        String[] PANAC = s1.split("_");
+////                                        int proton = Integer.parseInt(PANAC[0].trim());
+////                                        int neutron = Integer.parseInt(PANAC[1].trim());
+////
+////                                        int count = 1;
+////                                        if (PANAC.length == 3) count = Integer.parseInt(PANAC[2].trim());
+////                                        ItemStack itemStack = NbtAndGroupSettings.get(proton, neutron);
+////                                        itemStack.setCount(count);
+////                                        player.drop(itemStack, true);
+////                                    }
+////                                }
+////
+////                            }
+////                        }
+////                    }
+////                }
+//            }
+//
+//        }
         super.inventoryTick(stack, level, entity, slot, selected);
     }
 
@@ -60,18 +125,36 @@ public class ElementItem extends Item {
         assert tag != null;
         if (!tag.isEmpty()) {
             list.add(translatable("item.nucleoplasm.cf"));
-            list.add(nullToEmpty(String.format("%02d", (tag.getInt("proton") + tag.getInt("neutron")))));
-            list.add(nullToEmpty("    %s    ".formatted(tag.getString("abbreviation"))));
-            list.add(nullToEmpty(String.format("%02d", tag.getInt("proton"))));
-            list.add(nullToEmpty(""));
-            list.add(nullToEmpty("decay: " + tag.getBoolean("decay")));
-            list.add(translatable("item.nucleoplasm.ram"));//relative_atomic_mass:
-            list.add(nullToEmpty(String.valueOf(tag.getDouble("relative_atomic_mass"))));
-            list.add(translatable("item.nucleoplasm.mc.half.life")
-                .append(nullToEmpty(String
-                    .valueOf(tag
-                        .getDouble("mc_half_life"))))
+            list.add(
+                empty()
+                    .append(
+                        "%03d"
+                            .formatted(tag.getInt("proton") + tag.getInt("neutron"))
+                    )
             );
+
+            list.add(empty().append("      %s      ".formatted(tag.getString("abbreviation"))));
+            list.add(empty().append(String.format("%03d", tag.getInt("proton"))));
+//            list.add(nullToEmpty(String.format("%03d", tag.getInt("proton"))));
+            list.add(empty());
+            list.add(empty().append("delay: ").append(String.valueOf(tag.getBoolean("delay"))));
+            list.add(translatable("item.nucleoplasm.ram"));//relative_atomic_mass:
+            list.add(empty().append(String.valueOf(tag.getDouble("relative_atomic_mass"))));
+//            list.add(nullToEmpty(String.valueOf(tag.getDouble("relative_atomic_mass"))));
+            if (tag.contains("half_life")) {
+                list.add(
+                    translatable("item.nucleoplasm.half.life")
+                        .append(tag.getString("half_life"))
+                );
+                list.add(
+                    empty()
+                        .append("MC ")
+                        .append(translatable("item.nucleoplasm.half.life"))
+                        .append(String.valueOf(tag.getDouble("mc_half_life")))
+                );
+            }
+            list.add(empty().append(String.valueOf(tag.getLong("create_tick"))));
+
         }
         super.appendHoverText(stack, level, list, flag);
     }
