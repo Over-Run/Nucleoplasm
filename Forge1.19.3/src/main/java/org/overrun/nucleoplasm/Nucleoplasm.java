@@ -6,15 +6,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.overrun.nucleoplasm.api.NDelay;
 import org.overrun.nucleoplasm.item.NItemGroups;
 import org.overrun.nucleoplasm.item.NbtAndGroupSettings;
 import org.overrun.nucleoplasm.item.RegItem;
@@ -24,7 +21,7 @@ import static org.overrun.nucleoplasm.Basic.MOD_ID;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MOD_ID)
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = MOD_ID)
 public final class Nucleoplasm {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -43,26 +40,35 @@ public final class Nucleoplasm {
 //        modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
-
         ITEMS.register(modEventBus);
-//        modEventBus.addListener(this::groupEvent);
-
+        modEventBus.addListener(this::groupEvent);
 //        MinecraftForge.EVENT_BUS.register(this);
     }
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void tickPlayer(TickEvent.PlayerTickEvent event) {
-        for (int i = 0; i < event.player.getInventory().getContainerSize(); i++) {
-            NDelay.tickEvent(event.player, i);
+
+    @SubscribeEvent
+    public void groupEvent(CreativeModeTabEvent.Register event) {
+        NbtAndGroupSettings.init();
+        for (NItemGroups value : NItemGroups.values()) {
+            value.itemGroup = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, value.name()), builder ->
+                value.register(builder)
+                    .displayItems((pEnabledFeatures, pOutput, pDisplayOperatorCreativeTab) ->
+                        pOutput.acceptAll(value.getStacks())));
         }
     }
-
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void tickPlayer2(TickEvent.PlayerTickEvent event) {
-
-        for (int i = 0; i < event.player.getInventory().getContainerSize(); i++) {
-            NDelay.tickPlayer2(event.player, i);
-        }
-    }
+//    @SubscribeEvent(priority = EventPriority.HIGHEST)
+//    public static void tickPlayer(TickEvent.PlayerTickEvent event) {
+//        for (int i = 0; i < event.player.getInventory().getContainerSize(); i++) {
+//            NDecay.tickEvent(event.player, i);
+//        }
+//    }
+//
+//    @SubscribeEvent(priority = EventPriority.HIGHEST)
+//    public static void tickPlayer2(TickEvent.PlayerTickEvent event) {
+//
+//        for (int i = 0; i < event.player.getInventory().getContainerSize(); i++) {
+//            NDecay.tickPlayer2(event.player, i);
+//        }
+//    }
 //    @SubscribeEvent
 //    private static void commonSetup(final FMLCommonSetupEvent event) {
 //    }
@@ -79,15 +85,6 @@ public final class Nucleoplasm {
 //        public static void onClientSetup(FMLClientSetupEvent event) {
 //        }
 
-        @SubscribeEvent
-        public static void groupEvent(CreativeModeTabEvent.Register event) {
-            NbtAndGroupSettings.init();
-            for (NItemGroups value : NItemGroups.values()) {
-                value.itemGroup = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, value.name()), builder ->
-                    value.register(builder)
-                        .displayItems((pEnabledFeatures, pOutput, pDisplayOperatorCreativeTab) ->
-                            pOutput.acceptAll(value.getStacks())));
-            }
-        }
+
     }
 }

@@ -7,7 +7,6 @@ plugins {
 
 minecraft {
     version("1.19.3")
-
 //    platform(JOINED)
     accessWideners(project.file("src/main/resources/nucleoplasm.accesswidener"))
 }
@@ -22,4 +21,6 @@ repositories {
 dependencies {
 //    forgeFlower("org.quiltmc:quiltflower:1.9.0")
     compileOnly("org.spongepowered:mixin:0.8.5")
+    //noinspection VulnerableLibrariesLocal
+    implementation 'org.yaml:snakeyaml:1.33'
 }

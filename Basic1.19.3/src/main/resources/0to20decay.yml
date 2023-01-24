@@ -1,0 +1,18 @@
+H:
+  # neutron
+  0:
+    decay: false
+    half_life: ""
+  1:
+    decay: false
+    half_life: ""
+  2:
+    decay: true
+    half_life: "3.887789875E8"
+  3:
+  4:
+  5:
+  6:
+He:
+
+

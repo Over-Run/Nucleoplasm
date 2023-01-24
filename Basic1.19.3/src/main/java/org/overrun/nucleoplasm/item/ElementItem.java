@@ -1,12 +1,10 @@
 package org.overrun.nucleoplasm.item;
 
-import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -16,11 +14,9 @@ import org.jetbrains.annotations.Nullable;
 import org.overrun.nucleoplasm.Basic;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
-import static net.minecraft.network.chat.Component.*;
-import static org.overrun.nucleoplasm.item.DelayTimeSettings.map;
+import static net.minecraft.network.chat.Component.empty;
+import static net.minecraft.network.chat.Component.translatable;
 
 //核素 元素
 
@@ -32,12 +28,21 @@ public class ElementItem extends Item {
         super(properties);
     }
 
-    static {
-        DelayTimeSettings.init();
-    }
-
     @Override
     public void inventoryTick(@NotNull ItemStack stack, @NotNull Level level, @NotNull Entity entity, int slot, boolean selected) {
+        if (entity instanceof Player) {
+            if (stack.hasTag()) {
+                assert stack.getTag() != null;
+                CompoundTag tag = stack.getTag().copy();
+                if (!tag.contains("create_tick")) {
+                    tag.putLong("create_tick", entity.level.getGameTime());
+                    stack.setTag(tag);
+                } else  {
+                }
+
+            }
+        }
+
 //        CompoundTag compoundTag = stack.hasTag() ? stack.getTag() : null;
 //        if (compoundTag != null) {
 //            if (compoundTag.contains("create_tick")) {//创建的游戏时间
@@ -69,10 +74,10 @@ public class ElementItem extends Item {
 //                    }
 //                }
 ////                if ((level.getGameTime() - tag.getLong("create_tick")) >= tag.getDouble("mc_half_life")) {
-////                    for (DelayTimeSettings value : DelayTimeSettings.values()) {
+////                    for (DecayTimeSettings value : DecayTimeSettings.values()) {
 ////                        double d = 1;
 ////                        if (value.name().equals(tag.getString("abbreviation")+tag.getInt("neutron"))) {
-////                            for (String s : value.getDelay_out()) {
+////                            for (String s : value.getDecay_out()) {
 ////                                String[] split = s.split(",");
 ////                                double ran = Double.parseDouble(split[1].trim());
 ////                                double v = new Random().nextDouble(0,1);
@@ -137,7 +142,7 @@ public class ElementItem extends Item {
             list.add(empty().append(String.format("%03d", tag.getInt("proton"))));
 //            list.add(nullToEmpty(String.format("%03d", tag.getInt("proton"))));
             list.add(empty());
-            list.add(empty().append("delay: ").append(String.valueOf(tag.getBoolean("delay"))));
+            list.add(empty().append("decay: ").append(String.valueOf(tag.getBoolean("decay"))));
             list.add(translatable("item.nucleoplasm.ram"));//relative_atomic_mass:
             list.add(empty().append(String.valueOf(tag.getDouble("relative_atomic_mass"))));
 //            list.add(nullToEmpty(String.valueOf(tag.getDouble("relative_atomic_mass"))));
