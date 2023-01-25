@@ -65,8 +65,8 @@ java {
 
 jar {
     from {
-        configurations.runtime.collect {
-            zipTree(it)
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
         }
     }
     from("LICENSE") {

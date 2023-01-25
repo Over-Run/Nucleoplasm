@@ -174,8 +174,8 @@ dependencies {
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
     from {
-        configurations.runtime.collect {
-            zipTree(it)
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
         }
     }
     manifest {
