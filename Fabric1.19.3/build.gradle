@@ -64,6 +64,11 @@ java {
 }
 
 jar {
+    from {
+        configurations.runtime.collect {
+            zipTree(it)
+        }
+    }
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
