@@ -1,5 +1,6 @@
 package org.overrun.nucleoplasm.item;
 
+import com.google.gson.Gson;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import org.yaml.snakeyaml.Yaml;
@@ -16,6 +17,7 @@ public class GroupDecaySettings {
 
     private static final  Yaml yaml = new Yaml();
     public static final GroupDecaySettings items = new GroupDecaySettings("/items.yml");
+    public static final Decay decay0to20 = new Decay("/0to20decay.yml");
     private final LinkedHashMap<String, LinkedHashMap<String,LinkedHashMap<String, String>>> allItems;
 
     public GroupDecaySettings(String pathName) {
@@ -39,6 +41,7 @@ public class GroupDecaySettings {
     public static final List<ItemStack> other_non_metal = new ArrayList<>();
 
     //load init to groups
+    @SuppressWarnings("DuplicatedCode")
     public void init() {
         for (Map.Entry<String, LinkedHashMap<String, String>> entry : this.allItems.get("items").entrySet()) {
             String abbreviation = entry.getKey();
@@ -58,6 +61,18 @@ public class GroupDecaySettings {
                 tag.putInt("neutron", neutron);
                 tag.putString("translate", translate);
                 tag.putInt("relative_atomic_mass", proton + neutron);
+                Decay decaySettings = getDecaySettings(proton);
+                if (decaySettings != null) {
+                    String halfLife = decaySettings.getHalfLife(abbreviation, neutron);
+                    if (halfLife != null) {
+                        tag.putBoolean("decay", true);
+                        tag.putString("half_life", halfLife);
+                        tag.putDouble("mc_half_life", decaySettings.convertMcHalfLife(halfLife));
+                    }
+                }
+                if (tag.contains("decay")) {
+                    tag.putBoolean("decay", false);
+                }
                 stack.setTag(tag);
                 switch (proton) {
                     case 3, 11, 19, 37, 55, 87 -> alkali_metal.add(stack);
@@ -81,7 +96,42 @@ public class GroupDecaySettings {
             }
         }
     }
-    public LinkedHashMap<String, String> getItem(String abbreviation) {
+
+    public ItemStack getItemStack(String abbreviation, int neutron) {
+        final var item = getItemString(abbreviation);
+        ItemStack stack = new ItemStack(RegItem.elementera.getItem().get()).copy();
+        CompoundTag tag = new CompoundTag();
+        if (!item.isEmpty()) {
+            int proton = Integer.parseInt(item.get("proton").trim());
+            tag.putInt("proton", proton);
+            tag.putInt("neutron", neutron);
+            tag.putString("translate", item.get("translate").trim());
+            tag.putInt("relative_atomic_mass", proton + neutron);
+            Decay decaySettings = getDecaySettings(proton);
+            if (decaySettings != null) {
+                String halfLife = decaySettings.getHalfLife(abbreviation, neutron);
+                if (halfLife != null) {
+                    tag.putBoolean("decay", true);
+                    tag.putString("half_life", halfLife);
+                    tag.putDouble("mc_half_life", decaySettings.convertMcHalfLife(halfLife));
+                }
+            }
+            if (tag.contains("decay")) {
+                tag.putBoolean("decay", false);
+            }
+        }
+        stack.setTag(tag);
+        return stack;
+    }
+
+    public static Decay getDecaySettings(int proton) {
+        if (proton <= 20) {
+            return decay0to20;
+        }
+        return null;
+    }
+
+    public LinkedHashMap<String, String> getItemString(String abbreviation) {
         for (Map.Entry<String, LinkedHashMap<String, String>> entry : this.allItems.get("items").entrySet()) {
             String s = entry.getKey();
             if (s.equals(abbreviation)) {
@@ -102,7 +152,7 @@ public class GroupDecaySettings {
      *      translate -> String -> hydrogen;
      * }
      */
-    public String getItemToValue(String abbreviation, String key) {
+    public String getItemStringToValue(String abbreviation, String key) {
         for (var entry : this.allItems.get("items").entrySet()) {
             String s = entry.getKey();
             if (s.equals(abbreviation))
@@ -115,6 +165,6 @@ public class GroupDecaySettings {
 
     @Deprecated(since = "test", forRemoval = true)
     public static void main(String[] args) {
-        System.out.println(items.getItem("H"));
+        System.out.println(items.getItemString("H"));
     }
 }
