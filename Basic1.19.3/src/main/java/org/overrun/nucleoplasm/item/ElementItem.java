@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.overrun.nucleoplasm.Basic;
+import org.overrun.nucleoplasm.api.jsons.ItemsUtils;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -43,36 +44,43 @@ public class ElementItem extends Item {
                 } else  {
                     int createTick = Math.toIntExact(entity.level.getGameTime() - tag.getLong("create_tick"));
                     if (createTick >= tag.getDouble("mc_half_life")) {
-                        int proton = tag.getInt("proton");
                         int neutron = tag.getInt("neutron");
                         String abbreviation = tag.getString("abbreviation");
-                        Decay decaySettings = GroupDecaySettings.getDecaySettings(proton);
-                        if (decaySettings != null) {
-                            ((Player) entity).getInventory().setItem(slot, ItemStack.EMPTY);
-                            var random = decaySettings.getRandom(abbreviation, neutron);
-                            double d = 0;
-                            double v = new Random().nextDouble(0, 100);
-                            for (var entry : random.entrySet()) {
-                                for (var e : entry.getValue().entrySet()) {
-                                    double aDouble = e.getKey() * 100;
-                                    if (v - d <= aDouble && v - d >= 0) {
-                                        for (var mapEntry : e.getValue().entrySet()) {
-                                            var sol = mapEntry.getValue();
-                                            String abbreviation1 = (String) sol.get("abbreviation");
-                                            int neutron1 = (int) sol.get("neutron");
-                                            int count = (int) sol.get("count");
-                                            ItemStack copy = GroupDecaySettings.items.getItemStack(abbreviation1, neutron1).copy();
-                                            copy.setCount(count);
-                                            ((Player) entity).drop(copy, true);
-
-                                        }
-                                        break;
-                                    }
-                                    d += aDouble;
-
-                                }
+                        Object decayNeutronSettings = ItemsUtils.getDecayNeutronSettings(Basic.loader.get(1), abbreviation, neutron);
+                        Object random = decayNeutronSettings != null ? ItemsUtils.get(decayNeutronSettings).get("random") : null;
+                        if (random != null) {
+                            for (var entry : ItemsUtils.get(random).entrySet()) {
+                                int parseInt = Integer.parseInt(String.valueOf(entry.getKey()));
+                                Object o2 = entry.getValue();
                             }
                         }
+//                        Decay decaySettings = GroupDecaySettings.getDecaySettings(proton);
+//                        if (decaySettings != null) {
+//                            ((Player) entity).getInventory().setItem(slot, ItemStack.EMPTY);
+//                            var random = decaySettings.getRandom(abbreviation, neutron);
+//                            double d = 0;
+//                            double v = new Random().nextDouble(0, 100);
+//                            for (var entry : random.entrySet()) {
+//                                for (var e : entry.getValue().entrySet()) {
+//                                    double aDouble = e.getKey() * 100;
+//                                    if (v - d <= aDouble && v - d >= 0) {
+//                                        for (var mapEntry : e.getValue().entrySet()) {
+//                                            var sol = mapEntry.getValue();
+//                                            String abbreviation1 = (String) sol.get("abbreviation");
+//                                            int neutron1 = (int) sol.get("neutron");
+//                                            int count = (int) sol.get("count");
+//                                            ItemStack copy = GroupDecaySettings.items.getItemStack(abbreviation1, neutron1).copy();
+//                                            copy.setCount(count);
+//                                            ((Player) entity).drop(copy, true);
+//
+//                                        }
+//                                        break;
+//                                    }
+//                                    d += aDouble;
+//
+//                                }
+//                            }
+//                        }
                     }
 
 

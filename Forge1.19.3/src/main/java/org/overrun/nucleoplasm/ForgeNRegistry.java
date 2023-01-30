@@ -2,8 +2,8 @@ package org.overrun.nucleoplasm;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
-import org.overrun.nucleoplasm.api.NRegistry;
-import org.overrun.nucleoplasm.api.NRegistryObject;
+import org.overrun.nucleoplasm.api.registry.NRegistry;
+import org.overrun.nucleoplasm.api.registry.NRegistryObject;
 
 import java.util.function.Supplier;
 

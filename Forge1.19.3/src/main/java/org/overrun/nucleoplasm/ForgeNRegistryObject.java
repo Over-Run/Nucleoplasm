@@ -1,6 +1,6 @@
 package org.overrun.nucleoplasm;
 
-import org.overrun.nucleoplasm.api.NRegistryObject;
+import org.overrun.nucleoplasm.api.registry.NRegistryObject;
 
 import java.util.function.Supplier;
 

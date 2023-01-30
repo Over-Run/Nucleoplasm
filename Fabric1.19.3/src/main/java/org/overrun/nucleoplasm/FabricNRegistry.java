@@ -4,8 +4,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import org.overrun.nucleoplasm.api.NRegistry;
-import org.overrun.nucleoplasm.api.NRegistryObject;
+import org.overrun.nucleoplasm.api.registry.NRegistry;
+import org.overrun.nucleoplasm.api.registry.NRegistryObject;
 
 import java.util.function.Supplier;
 

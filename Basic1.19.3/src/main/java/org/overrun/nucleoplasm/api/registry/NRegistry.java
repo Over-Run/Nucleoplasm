@@ -1,4 +1,4 @@
-package org.overrun.nucleoplasm.api;
+package org.overrun.nucleoplasm.api.registry;
 
 import net.minecraft.world.item.Item;
 

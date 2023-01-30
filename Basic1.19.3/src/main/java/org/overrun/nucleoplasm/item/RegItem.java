@@ -1,20 +1,12 @@
 package org.overrun.nucleoplasm.item;
 
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import org.overrun.nucleoplasm.Basic;
-import org.overrun.nucleoplasm.api.NRegistry;
-import org.overrun.nucleoplasm.api.NRegistryObject;
+import org.overrun.nucleoplasm.api.registry.NRegistry;
+import org.overrun.nucleoplasm.api.registry.NRegistryObject;
 
 import java.util.Locale;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import static org.overrun.nucleoplasm.Basic.MOD_ID;
 
 public enum RegItem {
     elementera(ElementItem::new);

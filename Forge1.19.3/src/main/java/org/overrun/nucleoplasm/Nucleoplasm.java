@@ -12,9 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.overrun.nucleoplasm.item.GroupDecaySettings;
 import org.overrun.nucleoplasm.item.NItemGroups;
-import org.overrun.nucleoplasm.item.NbtAndGroupSettings;
 import org.overrun.nucleoplasm.item.RegItem;
 import org.slf4j.Logger;
 
@@ -49,7 +47,7 @@ public final class Nucleoplasm {
     @SubscribeEvent
     public void groupEvent(CreativeModeTabEvent.Register event) {
 //        NbtAndGroupSettings.init();
-        GroupDecaySettings.items.init();
+        Basic.init();
         for (NItemGroups value : NItemGroups.values()) {
             value.itemGroup = event.registerCreativeModeTab(new ResourceLocation(MOD_ID, value.name()), builder ->
                 value.register(builder)
