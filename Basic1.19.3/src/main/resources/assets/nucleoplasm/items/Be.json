@@ -1,0 +1,235 @@
+{
+  "proton": 4,
+  "translate": "beryllium",
+  "list": [
+    {
+      "neutron": 2,
+      "decay": true,
+      "half_life": "5E-21",
+      "random": [
+        {
+          "ran": 1,
+          "items": [
+            {
+              "abbreviation": "He",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 3,
+      "decay": true,
+      "half_life": "4.598208E6",
+      "random": [
+        {
+          "ran": 1,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 4,
+      "decay": true,
+      "half_life": "8.2E-17",
+      "random": [
+        {
+          "ran": 1,
+          "items": [
+            {
+              "abbreviation": "He",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 5,
+      "decay": false
+    },
+    {
+      "neutron": 6,
+      "decay": true,
+      "half_life": "4.765067136E13",
+      "random": [
+        {
+          "ran": 1,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 6,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 7,
+      "decay": true,
+      "half_life": "1.376E1",
+      "random": [
+        {
+          "ran": 0.971,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.029,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 8,
+      "decay": true,
+      "half_life": "2.146E-2",
+      "random": [
+        {
+          "ran": 0.9948,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 8,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.0052,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 9,
+      "decay": true,
+      "half_life": "2.7E-21",
+      "random": [
+        {
+          "ran": 1,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 10,
+      "decay": true,
+      "half_life": "4.35E-3",
+      "random": [
+        {
+          "ran": 0.81,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 8,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.14,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 9,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.05,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 11,
+      "decay": true,
+      "half_life": "8E-22",
+      "random": [
+        {
+          "ran": 1,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 10,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 12,
+      "decay": true,
+      "half_life": "5.7E-22",
+      "random": [
+        {
+          "ran": 0.5,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 10,
+              "count": 1
+            },
+            {
+              "abbreviation": "n",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.5,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 10,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

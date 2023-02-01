@@ -1,5 +1,6 @@
 package org.overrun.nucleoplasm.item;
 
+import com.google.gson.internal.LinkedTreeMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -21,6 +22,8 @@ import java.util.Random;
 
 import static net.minecraft.network.chat.Component.empty;
 import static net.minecraft.network.chat.Component.translatable;
+import static org.overrun.nucleoplasm.Basic.loader;
+import static org.overrun.nucleoplasm.api.jsons.ItemsUtils.*;
 
 //核素 元素
 
@@ -44,14 +47,39 @@ public class ElementItem extends Item {
                 } else  {
                     int createTick = Math.toIntExact(entity.level.getGameTime() - tag.getLong("create_tick"));
                     if (createTick >= tag.getDouble("mc_half_life")) {
+                        ((Player) entity).getInventory().setItem(slot, ItemStack.EMPTY);
                         int neutron = tag.getInt("neutron");
                         String abbreviation = tag.getString("abbreviation");
-                        Object decayNeutronSettings = ItemsUtils.getDecayNeutronSettings(Basic.loader.get(1), abbreviation, neutron);
-                        Object random = decayNeutronSettings != null ? ItemsUtils.get(decayNeutronSettings).get("random") : null;
+                        Object decayNeutronSettings = getDecayNeutronSettings(loader.get(1), abbreviation, neutron);
+                        Object random = decayNeutronSettings != null ? get(decayNeutronSettings).get("random") : null;
+                        double d = 0;
+                        double v = new Random().nextDouble(0.0000000000, 1.0000000000);
                         if (random != null) {
-                            for (var entry : ItemsUtils.get(random).entrySet()) {
-                                int parseInt = Integer.parseInt(String.valueOf(entry.getKey()));
-                                Object o2 = entry.getValue();
+                            for (var entry : get(random).entrySet()) {
+//                                int parseInt = Integer.parseInt((String) entry.getKey());
+                                for (var e : get(entry.getValue()).entrySet()) {
+                                    double ran = Double.parseDouble((String) e.getKey());
+                                    if (v >= d && v <= ran) {
+                                        for (var mapEntry : get(e.getValue()).entrySet()) {
+//                                            Object value = mapEntry.getValue();
+                                            var map = get(mapEntry.getValue());
+                                            String abbreviation1 = (String) map.get("abbreviation");
+                                            int neutron1 = Integer.parseInt((String) map.get("neutron"));
+                                            int count = Integer.parseInt((String) map.get("count"));
+                                            LinkedTreeMap<?, ?> map1 = get(get(loader.get(1)).get("items"));
+                                            int proton = (int) map1.get(abbreviation1);
+                                            String translate = (String) map1.get("translate");
+                                            Object decayNeutronSettings1 = getDecayNeutronSettings(loader.get(1), abbreviation, neutron);
+                                            String halfLife = decayNeutronSettings1 != null ? (String) get(decayNeutronSettings1).get("half_life") : null;
+                                            if (halfLife != null) {
+                                                ItemStack itemStack = getItemStack(RegItem.elementera,abbreviation1, translate, halfLife, proton, neutron1);
+                                                itemStack.setCount(count);
+                                                ((Player) entity).drop(itemStack, false);
+                                            }
+                                        }
+                                    }
+
+                                }
                             }
                         }
 //                        Decay decaySettings = GroupDecaySettings.getDecaySettings(proton);

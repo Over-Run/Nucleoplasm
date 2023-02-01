@@ -1,0 +1,133 @@
+proton: 5
+translate: boron
+list:
+  - neutron: 2
+    decay: true
+    half_life: "5.7E-22"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 3
+    decay: true
+    half_life: "7.7E-1"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: He
+            neutron: 2
+            count: 2
+  - neutron: 4
+    decay: true
+    half_life: "8E-19"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 4
+            count: 1
+  - neutron: 5
+    decay: false
+  - neutron: 6
+    decay: false
+  - neutron: 7
+    decay: true
+    half_life: "2.02E-2"
+    random:
+      - ran: 0.984
+        items:
+          - abbreviation: C
+            neutron: 6
+            count: 1
+      - ran: 0.016
+        items:
+          - abbreviation: Be
+            neutron: 4
+            count: 1
+  - neutron: 8
+    decay: true
+    half_life: "1.733E-2"
+    random:
+      - ran: 0.9972
+        items:
+          - abbreviation: C
+            neutron: 7
+            count: 1
+      - ran: 0.0028
+        items:
+          - abbreviation: C
+            neutron: 6
+            count: 1
+  - neutron: 9
+    decay: true
+    half_life: "1.25E-2"
+    random:
+      - ran: 0.9396
+        items:
+          - abbreviation: C
+            neutron: 8
+            count: 1
+      - ran: 0.0604
+        items:
+          - abbreviation: C
+            neutron: 7
+            count: 1
+  - neutron: 10
+    decay: true
+    half_life: "9.93E-3"
+    random:
+      - ran: 0.936
+        items:
+          - abbreviation: C
+            neutron: 8
+            count: 1
+      - ran: 0.06
+        items:
+          - abbreviation: C
+            neutron: 9
+            count: 1
+      - ran: 0.004
+        items:
+          - abbreviation: C
+            neutron: 7
+            count: 1
+  - neutron: 11
+    decay: true
+    half_life: "4.56237715071385E-21"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: B
+            neutron: 10
+            count: 1
+  - neutron: 12
+    decay: true
+    half_life: "5.08E-3"
+    random:
+      - ran: 0.63
+        items:
+          - abbreviation: C
+            neutron: 10
+            count: 1
+      - ran: 0.221
+        items:
+          - abbreviation: C
+            neutron: 11
+            count: 1
+      - ran: 0.11
+        items:
+          - abbreviation: C
+            neutron: 9
+            count: 1
+      - ran: 0.035
+        items:
+          - abbreviation: C
+            neutron: 8
+            count: 1
+      - ran: 0.004
+        items:
+          - abbreviation: C
+            neutron: 7
+            count: 1

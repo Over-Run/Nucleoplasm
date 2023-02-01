@@ -98,7 +98,7 @@ public class ItemsUtils {
         for (final var entry : get(get(loader.get(1)).get("items")).entrySet()) {
             String abbreviation = (String) entry.getKey();
             final var map = get(entry.getValue());
-            int proton = (int) map.get("proton");
+            int proton = Integer.parseInt((String) map.get("proton"));
             String translate = (String) map.get("translate");
             for (int neutron = (int) map.get("minNeutron"); neutron <= (int) map.get("maxNeutron"); neutron++) {
                 Object decayNeutronSettings = getDecayNeutronSettings(loader.get(1), abbreviation, neutron);

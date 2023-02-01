@@ -1,0 +1,358 @@
+{
+  "elements": [
+    {
+      "name": "H"
+    },
+    {
+      "name": "He"
+    },
+    {
+      "name": "Li"
+    },
+    {
+      "name": "Be"
+    },
+    {
+      "name": "B"
+    },
+    {
+      "name": "C"
+    },
+    {
+      "name": "N"
+    },
+    {
+      "name": "O"
+    },
+    {
+      "name": "F"
+    },
+    {
+      "name": "Ne"
+    },
+    {
+      "name": "Na"
+    },
+    {
+      "name": "Mg"
+    },
+    {
+      "name": "Al"
+    },
+    {
+      "name": "Si"
+    },
+    {
+      "name": "P"
+    },
+    {
+      "name": "S"
+    },
+    {
+      "name": "Cl"
+    },
+    {
+      "name": "Ar"
+    },
+    {
+      "name": "K"
+    },
+    {
+      "name": "Ca"
+    },
+    {
+      "name": "Sc"
+    },
+    {
+      "name": "Ti"
+    },
+    {
+      "name": "V"
+    },
+    {
+      "name": "Cr"
+    },
+    {
+      "name": "Mn"
+    },
+    {
+      "name": "Fe"
+    },
+    {
+      "name": "Co"
+    },
+    {
+      "name": "Ni"
+    },
+    {
+      "name": "Cu"
+    },
+    {
+      "name": "Zn"
+    },
+    {
+      "name": "Ga"
+    },
+    {
+      "name": "Ge"
+    },
+    {
+      "name": "As"
+    },
+    {
+      "name": "Se"
+    },
+    {
+      "name": "Br"
+    },
+    {
+      "name": "Kr"
+    },
+    {
+      "name": "Rb"
+    },
+    {
+      "name": "Sr"
+    },
+    {
+      "name": "Y"
+    },
+    {
+      "name": "Zr"
+    },
+    {
+      "name": "Nb"
+    },
+    {
+      "name": "Mo"
+    },
+    {
+      "name": "Tc"
+    },
+    {
+      "name": "Ru"
+    },
+    {
+      "name": "Rh"
+    },
+    {
+      "name": "Pd"
+    },
+    {
+      "name": "Ag"
+    },
+    {
+      "name": "Cd"
+    },
+    {
+      "name": "In"
+    },
+    {
+      "name": "Sn"
+    },
+    {
+      "name": "Sb"
+    },
+    {
+      "name": "Te"
+    },
+    {
+      "name": "I"
+    },
+    {
+      "name": "Xe"
+    },
+    {
+      "name": "Cs"
+    },
+    {
+      "name": "Ba"
+    },
+    {
+      "name": "La"
+    },
+    {
+      "name": "Ce"
+    },
+    {
+      "name": "Pr"
+    },
+    {
+      "name": "Nd"
+    },
+    {
+      "name": "Pm"
+    },
+    {
+      "name": "Sm"
+    },
+    {
+      "name": "Eu"
+    },
+    {
+      "name": "Gd"
+    },
+    {
+      "name": "Tb"
+    },
+    {
+      "name": "Dy"
+    },
+    {
+      "name": "Ho"
+    },
+    {
+      "name": "Er"
+    },
+    {
+      "name": "Tm"
+    },
+    {
+      "name": "Yb"
+    },
+    {
+      "name": "Lu"
+    },
+    {
+      "name": "Hf"
+    },
+    {
+      "name": "Ta"
+    },
+    {
+      "name": "W"
+    },
+    {
+      "name": "Re"
+    },
+    {
+      "name": "Os"
+    },
+    {
+      "name": "Ir"
+    },
+    {
+      "name": "Pt"
+    },
+    {
+      "name": "Au"
+    },
+    {
+      "name": "Hg"
+    },
+    {
+      "name": "Tl"
+    },
+    {
+      "name": "Pb"
+    },
+    {
+      "name": "Bi"
+    },
+    {
+      "name": "Po"
+    },
+    {
+      "name": "At"
+    },
+    {
+      "name": "Rn"
+    },
+    {
+      "name": "Fr"
+    },
+    {
+      "name": "Ra"
+    },
+    {
+      "name": "Ac"
+    },
+    {
+      "name": "Th"
+    },
+    {
+      "name": "Pa"
+    },
+    {
+      "name": "U"
+    },
+    {
+      "name": "Np"
+    },
+    {
+      "name": "Pu"
+    },
+    {
+      "name": "Am"
+    },
+    {
+      "name": "Cm"
+    },
+    {
+      "name": "Bk"
+    },
+    {
+      "name": "Cf"
+    },
+    {
+      "name": "Es"
+    },
+    {
+      "name": "Fm"
+    },
+    {
+      "name": "Md"
+    },
+    {
+      "name": "No"
+    },
+    {
+      "name": "Lr"
+    },
+    {
+      "name": "Rf"
+    },
+    {
+      "name": "Db"
+    },
+    {
+      "name": "Sg"
+    },
+    {
+      "name": "Bh"
+    },
+    {
+      "name": "Hs"
+    },
+    {
+      "name": "Mt"
+    },
+    {
+      "name": "Ds"
+    },
+    {
+      "name": "Rg"
+    },
+    {
+      "name": "Cn"
+    },
+    {
+      "name": "Nh"
+    },
+    {
+      "name": "Fl"
+    },
+    {
+      "name": "Mc"
+    },
+    {
+      "name": "Lv"
+    },
+    {
+      "name": "Ts"
+    },
+    {
+      "name": "Og"
+    }
+  ]
+}

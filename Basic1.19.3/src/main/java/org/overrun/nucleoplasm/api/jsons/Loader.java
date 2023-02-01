@@ -38,8 +38,12 @@ public class Loader {
                 int neutron = Integer.parseInt((String) e.getKey());
                 LinkedTreeMap<?, ?> map = ItemsUtils.get(e.getValue());
                 ItemsUtils.get(map.get("random")).forEach((o, o2) -> {
-                    System.out.println(o);
-                    System.out.println(o2);
+                    ItemsUtils.get(o2).forEach((o1, o21) -> {
+                        ItemsUtils.get(o21).forEach((o3, o22) -> {
+                            System.out.println(o3);
+                            System.out.println(o22);
+                        });
+                    });
                 });
             }
 
