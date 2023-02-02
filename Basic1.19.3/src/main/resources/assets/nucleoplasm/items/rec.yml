@@ -1,5 +1,5 @@
 proton: 8 # 3 to 18
-translate: nitrogen
+translate: oxygen
 list:
   - - neutron: 3
       decay: true
@@ -82,55 +82,70 @@ list:
             count: 1
   - neutron: 13
     decay: true
-    half_life: "1.8E-22"
+    half_life: "3.42E0"
     random:
       - ran: 1.0
         items:
-          - abbreviation: C
-            neutron: 3
+          - abbreviation: F
+            neutron: 12
             count: 1
   - neutron: 14
     decay: true
-    half_life: "1.8E-22"
+    half_life: "2.25E0"
     random:
-      - ran: 1.0
+      - ran: 0.78
         items:
-          - abbreviation: C
-            neutron: 3
+          - abbreviation: F
+            neutron: 13
+            count: 1
+      - ran: 0.22
+        items:
+          - abbreviation: F
+            neutron: 12
             count: 1
   - neutron: 15
     decay: true
-    half_life: "1.8E-22"
+    half_life: "9.7E-2"
     random:
-      - ran: 1.0
+      - ran: 0.5799
         items:
-          - abbreviation: C
-            neutron: 3
+          - abbreviation: F
+            neutron: 13
+            count: 1
+      - ran: 0.4201
+        items:
+          - abbreviation: F
+            neutron: 14
             count: 1
   - neutron: 16
     decay: true
-    half_life: "1.8E-22"
+    half_life: "6.5E-2"
     random:
-      - ran: 1.0
+      - ran: 0.5799
         items:
-          - abbreviation: C
-            neutron: 3
+          - abbreviation: F
+            neutron: 14
+            count: 1
+      - ran: 0.4201
+        items:
+          - abbreviation: F
+            neutron: 15
             count: 1
   - neutron: 17
     decay: true
-    half_life: "1.8E-22"
+    half_life: "5.2E-8"
     random:
       - ran: 1.0
         items:
-          - abbreviation: C
-            neutron: 3
+          - abbreviation: O
+            neutron: 16
             count: 1
   - neutron: 18
     decay: true
-    half_life: "1.8E-22"
+    half_life: "5E-12"
     random:
       - ran: 1.0
         items:
-          - abbreviation: C
-            neutron: 3
+          - abbreviation: O
+            neutron: 16
             count: 1
