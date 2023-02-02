@@ -5,7 +5,7 @@ list:
     decay: true
     half_life: "1.8E-22"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -14,7 +14,7 @@ list:
     decay: true
     half_life: "5.5E-22"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -23,7 +23,7 @@ list:
     decay: true
     half_life: "1.1E-2"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -32,7 +32,7 @@ list:
     decay: true
     half_life: "5.979E2"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -45,7 +45,7 @@ list:
     decay: true
     half_life: "7.132E0"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -54,7 +54,7 @@ list:
     decay: true
     half_life: "4.173E0"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -63,7 +63,7 @@ list:
     decay: true
     half_life: "6.19E-1"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -72,7 +72,7 @@ list:
     decay: true
     half_life: "3.36E-1"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -81,7 +81,7 @@ list:
     decay: true
     half_life: "1.34E-1"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -90,7 +90,7 @@ list:
     decay: true
     half_life: "4.84E-2"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -99,7 +99,7 @@ list:
     decay: true
     half_life: "2.3E-2"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -108,7 +108,7 @@ list:
     decay: true
     half_life: "1.41E-2"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2
@@ -117,7 +117,7 @@ list:
     decay: true
     half_life: "5.2E-8"
     random:
-      - ran: 1
+      - ran: 1.0
         items:
           - abbreviation: Be
             neutron: 2

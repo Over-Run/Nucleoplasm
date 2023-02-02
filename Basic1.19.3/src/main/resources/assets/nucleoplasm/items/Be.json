@@ -8,7 +8,7 @@
       "half_life": "5E-21",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "He",
@@ -25,7 +25,7 @@
       "half_life": "4.598208E6",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "Li",
@@ -42,7 +42,7 @@
       "half_life": "8.2E-17",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "He",
@@ -63,7 +63,7 @@
       "half_life": "4.765067136E13",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "Be",
@@ -134,7 +134,7 @@
       "half_life": "2.7E-21",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "Be",
@@ -188,7 +188,7 @@
       "half_life": "8E-22",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "Be",
