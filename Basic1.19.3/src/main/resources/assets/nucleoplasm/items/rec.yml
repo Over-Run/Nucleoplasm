@@ -3,7 +3,119 @@ translate: nitrogen
 list:
   - neutron: 3
     decay: true
-    half_life: "3.5E-21"
+    half_life: "1.8E-22"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 4
+    decay: true
+    half_life: "5.5E-22"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 5
+    decay: true
+    half_life: "1.1E-2"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 6
+    decay: true
+    half_life: "5.979E2"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 7
+    decay: false
+  - neutron: 8
+    decay: false
+  - neutron: 9
+    decay: true
+    half_life: "7.132E0"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 10
+    decay: true
+    half_life: "4.173E0"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 11
+    decay: true
+    half_life: "6.19E-1"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 12
+    decay: true
+    half_life: "3.36E-1"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 13
+    decay: true
+    half_life: "1.34E-1"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 14
+    decay: true
+    half_life: "4.84E-2"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 15
+    decay: true
+    half_life: "2.3E-2"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 16
+    decay: true
+    half_life: "1.41E-2"
+    random:
+      - ran: 1
+        items:
+          - abbreviation: Be
+            neutron: 2
+            count: 1
+  - neutron: 17
+    decay: true
+    half_life: "5.2E-8"
     random:
       - ran: 1
         items:
