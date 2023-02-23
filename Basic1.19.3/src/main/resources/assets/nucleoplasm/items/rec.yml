@@ -1,15 +1,15 @@
 proton: 8 # 3 to 18
 translate: oxygen
 list:
-  - - neutron: 3
-      decay: true
-      half_life: "3.5095208851645054E-22"
-      random:
-        - ran: 1.0
-          items:
-            - abbreviation: C
-              neutron: 3
-              count: 1
+  - neutron: 3
+    decay: true
+    half_life: "3.5095208851645054E-22"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: C
+            neutron: 3
+            count: 1
   - neutron: 4
     decay: true
     half_life: "6.3366349315470245E-21"

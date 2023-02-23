@@ -1,24 +1,30 @@
 {
   "proton": 0,
-  "translate":"neutron",
+  "translate": "neutron",
   "list": [
     {
-      "neutron": 0
+      "neutron": 0,
+      "decay": false
     },
     {
-      "neutron": 1
+      "neutron": 1,
+      "decay": false
     },
     {
-      "neutron": 2
+      "neutron": 2,
+      "decay": false
     },
     {
-      "neutron": 3
+      "neutron": 3,
+      "decay": false
     },
     {
-      "neutron": 4
+      "neutron": 4,
+      "decay": false
     },
     {
-      "neutron": 5
+      "neutron": 5,
+      "decay": false
     }
   ]
 }

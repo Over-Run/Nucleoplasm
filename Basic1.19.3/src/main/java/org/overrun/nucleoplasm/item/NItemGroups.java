@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.overrun.nucleoplasm.Basic;
+import org.overrun.nucleoplasm.api.group.RegElementStackGroup;
 import org.overrun.nucleoplasm.api.jsons.ItemsUtils;
 
 import java.util.List;
@@ -18,98 +19,98 @@ public enum NItemGroups {
         tag.putInt("proton", 1);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.gas/*后面再填充*/),
+    }, RegElementStackGroup.gas/*后面再填充*/),
     liquid(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 35);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.liquid),
+    }, RegElementStackGroup.liquid),
     solid(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 3);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.solid),
+    }, RegElementStackGroup.solid),
     element(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 1);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.element),
+    }, RegElementStackGroup.element),
     alkali_metal(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 3);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.alkali_metal),
+    }, RegElementStackGroup.alkali_metal),
     alkali_earth_metal(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 4);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.alkali_earth_metal),
+    }, RegElementStackGroup.alkali_earth_metal),
     transition_metal(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 21);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.transition_metal),
+    }, RegElementStackGroup.transition_metal),
     other_metal(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 13);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.other_metal),
+    }, RegElementStackGroup.other_metal),
     metalloid(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 5);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.metalloid),
+    }, RegElementStackGroup.metalloid),
     other_non_metal(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 6);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.other_non_metal),
+    }, RegElementStackGroup.other_non_metal),
     halogen(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 9);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.halogen),
+    }, RegElementStackGroup.halogen),
     noble_gas(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 2);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.noble_gas),
+    }, RegElementStackGroup.noble_gas),
     lanthanide_series(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 57);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.lanthanide_series),
+    }, RegElementStackGroup.lanthanide_series),
     actinide_series(() -> {
         ItemStack itemStack = new ItemStack(RegItem.elementera.getItem().get());
         CompoundTag tag = new CompoundTag();
         tag.putInt("proton", 89);
         itemStack.setTag(tag);
         return itemStack;
-    }, ItemsUtils.actinide_series),
+    }, RegElementStackGroup.actinide_series),
     ;
 
     private final Component title;

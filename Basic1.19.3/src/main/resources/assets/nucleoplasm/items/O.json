@@ -2,25 +2,23 @@
   "proton": 8,
   "translate": "oxygen",
   "list": [
-    [
-      {
-        "neutron": 3,
-        "decay": true,
-        "half_life": "3.5095208851645054E-22",
-        "random": [
-          {
-            "ran": 1,
-            "items": [
-              {
-                "abbreviation": "C",
-                "neutron": 3,
-                "count": 1
-              }
-            ]
-          }
-        ]
-      }
-    ],
+    {
+      "neutron": 3,
+      "decay": true,
+      "half_life": "3.5095208851645054E-22",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "C",
+              "neutron": 3,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
     {
       "neutron": 4,
       "decay": true,
@@ -81,7 +79,7 @@
       "half_life": "7.0606E1",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "N",
@@ -98,7 +96,7 @@
       "half_life": "1.2224E2",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "N",
@@ -127,7 +125,7 @@
       "half_life": "2.688E1",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "F",
@@ -144,7 +142,7 @@
       "half_life": "1.351E1",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "F",
@@ -161,7 +159,7 @@
       "half_life": "3.42E0",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "F",
@@ -259,7 +257,7 @@
       "half_life": "5.2E-8",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "O",
@@ -276,7 +274,7 @@
       "half_life": "5E-12",
       "random": [
         {
-          "ran": 1,
+          "ran": 1.0,
           "items": [
             {
               "abbreviation": "O",

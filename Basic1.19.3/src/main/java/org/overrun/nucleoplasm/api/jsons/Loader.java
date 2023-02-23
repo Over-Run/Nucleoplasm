@@ -2,16 +2,13 @@ package org.overrun.nucleoplasm.api.jsons;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import org.overrun.nucleoplasm.item.RegItem;
 
-import java.io.*;
-import java.net.URL;
-import java.util.*;
-
-import static org.overrun.nucleoplasm.api.jsons.ItemsUtils.setAllGroup;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class Loader {
 
@@ -19,8 +16,12 @@ public class Loader {
     private final Map<Integer, Object> jsonMap = new HashMap<>();
     public Loader(String... names) {
         for (var name : names) {
-            Object o = gson.fromJson(new InputStreamReader(this.getClass().getResourceAsStream(name)), Object.class);
-            jsonMap.put(jsonMap.size() + 1, o);
+            try(InputStreamReader reader = new InputStreamReader(Objects.requireNonNull(this.getClass().getResourceAsStream(name)), StandardCharsets.UTF_8)) {
+                Object o = gson.fromJson(reader, Object.class);
+                jsonMap.put(jsonMap.size() + 1, o);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public Object get(int i) {

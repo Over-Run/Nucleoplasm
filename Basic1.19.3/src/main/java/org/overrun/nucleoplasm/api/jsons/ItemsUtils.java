@@ -90,15 +90,27 @@ public class ItemsUtils {
         }
         return null;
     }
+
+    /**
+     * @param o 获取表1 (衰变表)
+     * @param abbreviation 简写名称
+     * @param neutron 中子
+     * @return 衰变信息(产物，半衰期)
+     */
     public static Object getDecayNeutronSettings(Object o, String abbreviation, int neutron) {
         return getDecaySettings(getDecayNeutron(o, abbreviation), neutron);
     }
 
+    /**
+     * @author baka4n
+     * @since 用于注册创造物品栏
+     * @param loader json总列表
+     */
     public static void setAllGroup(Loader loader) {
         for (final var entry : get(get(loader.get(1)).get("items")).entrySet()) {
             String abbreviation = (String) entry.getKey();
             final var map = get(entry.getValue());
-            int proton = Integer.parseInt((String) map.get("proton"));
+            int proton = Integer.parseInt(String.valueOf(map.get("proton")));
             String translate = (String) map.get("translate");
             for (int neutron = (int) map.get("minNeutron"); neutron <= (int) map.get("maxNeutron"); neutron++) {
                 Object decayNeutronSettings = getDecayNeutronSettings(loader.get(1), abbreviation, neutron);
@@ -107,6 +119,13 @@ public class ItemsUtils {
                 setGroupSwitch(itemStack, proton);
             }
         }
+    }
+
+    public static ItemStack getItemStack(Loader loader, String abbreviation, int neutron, int proton) {
+        String translate = String.valueOf(get(get(get(loader.get(1)).get("items")).get(abbreviation)).get("translate"));
+        Object decayNeutronSettings = getDecayNeutronSettings(loader.get(1), abbreviation, neutron);
+        String halfLife = decayNeutronSettings != null ? (String) get(decayNeutronSettings).get("half_life") : null;
+        return getItemStack(RegItem.elementera, abbreviation, translate, halfLife, proton, neutron);
     }
 
     public static final List<ItemStack> gas = new ArrayList<>();
