@@ -25,7 +25,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.overrun.nucleoplasm_api.sql.SQLite;
+import org.overrun.nucleoplasm_api.sql.SQLiteInfo;
 import org.slf4j.Logger;
 
 import java.io.File;
@@ -83,7 +83,7 @@ public class Nucleoplasm_api {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
         File dir = event.getServer().getServerDirectory();
-        SQLite sqLite = new SQLite(dir);
+        SQLiteInfo sqLite = new SQLiteInfo(dir);
 
 
         LOGGER.info(sqLite.serverDir.toString());

@@ -7,13 +7,16 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class SQLite {
+public class SQLiteInfo {
     public final  File serverDir;
     public final ConcurrentHashMap<String, Connection> sqlMap = new ConcurrentHashMap<>();
 
-    public SQLite(File dir) {
+    public SQLiteInfo(File dir) {
         serverDir = new File(dir, "sqlite-lib");
         if (!serverDir.exists()) {
             serverDir.mkdirs();
@@ -55,5 +58,41 @@ public class SQLite {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void close() throws SQLException {
+        for (var entry : sqlMap.entrySet()) {
+            entry.getValue().close();
+        }
+    }
+
+    public class TableInfo {
+        private Connection c;
+        public TableInfo(String name) {
+            if (sqlMap.containsKey(name)) {
+                c = sqlMap.get(name);
+            } else {
+                c = sqlMap.get("example");
+            }
+        }
+
+        public TableInfo get(String name) {
+            if (sqlMap.containsKey(name)) {
+                c = sqlMap.get(name);
+            }
+            return this;
+        }
+
+        public TableInfo createTable(String sqlCommand) {
+            try {
+                Statement statement = c.createStatement();
+                statement.executeUpdate(sqlCommand);
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return this;
+        }
+
     }
 }
