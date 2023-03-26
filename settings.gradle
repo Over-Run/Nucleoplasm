@@ -1,36 +1,12 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven {
-            url = 'https://maven.fabric.net/'
-            name = "Fabric"
-        }
-
-        maven {
-            url = 'https://repo.spongepowered.org/repository/maven-public/'
-            name = 'Sponge Mixin Maven'
-        }
-
-        maven {
-            url = 'https://maven.minecraftforge.net'
-            name = 'forge'
-        }
-
-        maven {
-            url = 'https://maven.parchmentmc.org'
-            name = "Parchment MC"
-        }
-
-        maven {
-            url = "https://maven.quiltmc.org/repository/release/"
-            name = "quilt"
-        }
+        maven { url = 'https://maven.minecraftforge.net/' }
     }
-
 }
 
-rootProject.name = 'Nucleoplasm'
-include 'Basic1.19.3'
-include 'Forge1.19.3'
-include 'Fabric1.19.3'
-project(":Basic1.19.3")
+rootProject.name = all
+
+include ':module'
+include("module:forge:1.19.4:nucleoplasm_api")
+

@@ -1,4 +1,14 @@
+plugins {
+    id 'java'
+}
 
+archivesBaseName = getName()
+println(getName())
+group group_id
+version project_version
 
-group "$groupId"
-version "$mod_version"
+allprojects {
+    apply plugin: "java"
+    group = group_id
+}
+

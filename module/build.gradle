@@ -1,0 +1,3 @@
+
+archivesBaseName = 'modlue'
+println("module")
