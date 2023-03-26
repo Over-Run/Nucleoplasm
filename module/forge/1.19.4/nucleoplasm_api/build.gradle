@@ -11,6 +11,7 @@ buildscript {
 
 plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
+//    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 apply plugin: 'org.spongepowered.mixin'
@@ -134,13 +135,19 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+}
 
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
+configurations {
+    shade
+    implementation.extendsFrom shade
+}
+
+jarJar.enable()
+
+reobf.create('jarJar')
+
+build {
+    dependsOn 'jarJar'
 }
 
 dependencies {
@@ -162,10 +169,19 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+//    shade('org.xerial:sqlite-jdbc:3.41.0.0')
+    minecraftLibrary(group: 'org.xerial', name: 'sqlite-jdbc', version: '[3.41.2.1,)') {
+        transitive(false)
+    }
+
+    jarJar(group: 'org.xerial', name: 'sqlite-jdbc', version: '[3.41.2.1,)') {
+        transitive(false)
+    }
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
+//    archiveClassifier = 'slim'
     manifest {
         attributes([
                 "Specification-Title"     : "nucleoplasm_api",
@@ -184,3 +200,19 @@ jar.finalizedBy('reobfJar')
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+tasks.jarJar.getArchiveClassifier().convention('')
+
+//publishing {
+//    publications {
+//        mavenJava(MavenPublication) {
+//            artifact tasks.jarJar
+//            artifact sourcesJar
+//        }
+//    }
+//    repositories {
+//        maven {
+//            url "file://${project.projectDir}/mcmodsrepo"
+//        }
+//    }
+//}

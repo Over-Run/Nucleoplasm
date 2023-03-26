@@ -9,6 +9,7 @@ version project_version
 
 allprojects {
     apply plugin: "java"
+    apply plugin: 'maven-publish'
     group = group_id
 }
 
