@@ -6,6 +6,13 @@
 
 欢迎使用核质模组！我们将致力于科幻的极致。
 
+# projects
+
+- [ ] nucleoplasm
+
+# nucleoplasm
+- [x] 数据库
+
 ## Goals
 
 - [ ] 机器
