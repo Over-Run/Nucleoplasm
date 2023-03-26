@@ -29,15 +29,18 @@ import org.overrun.nucleoplasm_api.sql.SQLiteInfo;
 import org.slf4j.Logger;
 
 import java.io.File;
+import java.sql.SQLException;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Nucleoplasm_api.MODID)
 public class Nucleoplasm_api {
 
     // Define mod id in a common place for everything to reference
+    public static SQLiteInfo sqLite = null;
     public static final String MODID = "nucleoplasm_api";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static File dir = null;
     // Create a Deferred Register to hold Blocks which will all be registered under the "nucleoplasm_api" namespace
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     // Create a Deferred Register to hold Items which will all be registered under the "nucleoplasm_api" namespace
@@ -51,8 +54,7 @@ public class Nucleoplasm_api {
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -62,19 +64,7 @@ public class Nucleoplasm_api {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
-    }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
-    }
-
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -82,34 +72,23 @@ public class Nucleoplasm_api {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
-        File dir = event.getServer().getServerDirectory();
-        SQLiteInfo sqLite = new SQLiteInfo(dir);
-
-
-        LOGGER.info(sqLite.serverDir.toString());
+        dir = event.getServer().getServerDirectory();
+        sqLite = new SQLiteInfo(dir);
 
     }
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
-//        LOGGER.info(event.getServer().name());
+
     }
     @SubscribeEvent
     public void onServerStopped(ServerStoppingEvent event) {
-
-    }
-
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        try {
+            sqLite.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
     public static class ServerModEvents {
         @SubscribeEvent
