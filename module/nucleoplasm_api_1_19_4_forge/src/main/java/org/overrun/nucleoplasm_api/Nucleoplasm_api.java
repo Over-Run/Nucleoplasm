@@ -2,19 +2,12 @@ package org.overrun.nucleoplasm_api;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
-import org.overrun.nucleoplasm_api.sql.MySql;
-
-import java.sql.SQLException;
 
 import static org.overrun.nucleoplasm_api.utils.FinalUtil.LOGGER;
 import static org.overrun.nucleoplasm_api.utils.FinalUtil.MODID;
-import static org.overrun.nucleoplasm_api.utils.NoFinalUtil.dir;
 
 @Mod(MODID)
 public class Nucleoplasm_api {
@@ -44,28 +37,6 @@ public class Nucleoplasm_api {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
-
-    }
-    private static MySql sql;
-
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-        // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
-//        dir = event.getServer().getServerDirectory();
-         sql = new MySql();
-         
-
-    }
-
-    @SubscribeEvent
-    public void onServerTick(TickEvent.ServerTickEvent event) {
-    }
-    @SubscribeEvent
-    public void onServerStopped(ServerStoppingEvent event) {
-
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)

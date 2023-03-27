@@ -11,7 +11,8 @@
 - [ ] nucleoplasm
 
 # nucleoplasm
-- [x] 数据库
+    api暂时为空，写一些共同部分
+    nuclide写核元素
 
 ## Goals
 

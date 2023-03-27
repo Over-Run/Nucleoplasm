@@ -7,6 +7,8 @@ pluginManagement {
 
 rootProject.name = all
 
-include ':module'
-include("module:forge:1.19.4:nucleoplasm_api")
+include("module:nucleoplasm_api_1_19_4_forge")
+
+include("module:nucleoplasm_nuclide_1_19_4_forge")
+
 
