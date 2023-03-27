@@ -169,14 +169,21 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-//    shade('org.xerial:sqlite-jdbc:3.41.0.0')
-    minecraftLibrary(group: 'org.xerial', name: 'sqlite-jdbc', version: '[3.41.2.1,)') {
-        transitive(false)
-    }
 
-    jarJar(group: 'org.xerial', name: 'sqlite-jdbc', version: '[3.41.2.1,)') {
-        transitive(false)
+//    shade('org.xerial:sqlite-jdbc:3.41.0.0')
+//    minecraftLibrary(group: 'org.xerial', name: 'sqlite-jdbc', version: '[3.41.2.1,)') {
+//        transitive(false)
+//    }
+
+    minecraftLibrary(group: 'net.sf.ucanaccess', name: 'ucanaccess', version: '[5.0.1,)') {
+        exclude(group: 'commons-logging', module: 'commons-logging')
     }
+    jarJar(group: 'net.sf.ucanaccess', name: 'ucanaccess', version: '[5.0.1,)') {
+        exclude(group: 'commons-logging', module: 'commons-logging')
+    }
+//    jarJar(group: 'org.xerial', name: 'sqlite-jdbc', version: '[3.41.2.1,)') {
+//        transitive(false)
+//    }
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
