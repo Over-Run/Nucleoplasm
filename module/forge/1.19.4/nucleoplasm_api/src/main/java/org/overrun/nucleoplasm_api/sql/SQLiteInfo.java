@@ -35,16 +35,7 @@ public class SQLiteInfo {
     //创建一个新的数据库
     public void createSQLite(String name) {
         File f = new File(serverDir, name);
-        if (!f.exists()) {
-            try {
-                f.createNewFile();
-                loadSQLite(f);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            Nucleoplasm_api.LOGGER.info("Database " + name + " already exists!");
-        }
+        loadSQLite(f);
     }
 
     private void loadSQLite(File file) {
@@ -54,6 +45,7 @@ public class SQLiteInfo {
             c = DriverManager.getConnection(JDBC.PREFIX + file.getName());
             String[] split = file.getName().split("\\\\");
             var string = split[split.length - 1];
+            c = DriverManager.getConnection(JDBC.PREFIX + file.getName());
             sqlMap.put(string, c);
         } catch (Exception e) {
             e.printStackTrace();
