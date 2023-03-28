@@ -1,14 +1,44 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven { url = 'https://maven.minecraftforge.net/' }
-        maven { url = 'https://maven.parchmentmc.org' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url = 'https://maven.fabric.net/'
+            name = "Fabric"
+        }
+
+        maven {
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+            name = 'Sponge Mixin Maven'
+        }
+
+        maven {
+            url = 'https://maven.minecraftforge.net'
+            name = 'forge'
+        }
+
+        maven {
+            url = 'https://maven.parchmentmc.org'
+            name = "Parchment MC"
+        }
+
+        maven {
+            url = "https://maven.quiltmc.org/repository/release/"
+            name = "quilt"
+        }
+        maven {
+            name = 'spigotmc-repo'
+            url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        }
+        maven {
+            name = 'sonatype'
+            url = 'https://oss.sonatype.org/content/groups/public/'
+        }
     }
+
 }
 
 rootProject.name = all
 
-include ":nucleoplasm_api_1.19.4_forge"
-include ":nucleoplasm_nuclide_1.19.4_forge"
-
+include("nucleoplasm-multi-loader-compatible:common")

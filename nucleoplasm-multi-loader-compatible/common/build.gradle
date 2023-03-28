@@ -1,0 +1,26 @@
+import static org.spongepowered.gradle.vanilla.repository.MinecraftPlatform.JOINED
+
+plugins {
+    id 'java'
+    id("org.spongepowered.gradle.vanilla") version "0.2.1-SNAPSHOT"
+}
+
+minecraft {
+    version(minecraft_version)
+//    platform(JOINED)
+    accessWideners(project.file("src/main/resources/nucleoplasm.accesswidener"))
+}
+
+group group_id
+version project_version
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    forgeFlower("org.quiltmc:quiltflower:1.9.0")
+    compileOnly("org.spongepowered:mixin:0.8.5")
+    //noinspection VulnerableLibrariesLocal
+//    implementation 'org.yaml:snakeyaml:1.33'
+}
