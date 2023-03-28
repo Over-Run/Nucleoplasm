@@ -8,7 +8,7 @@ plugins {
 minecraft {
     version(minecraft_version)
 //    platform(JOINED)
-    accessWideners(project.file("src/main/resources/nucleoplasm.accesswidener"))
+    accessWideners(project.file("src/main/resources/nmlc.accesswidener"))
 }
 
 group group_id
