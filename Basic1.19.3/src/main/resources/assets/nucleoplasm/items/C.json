@@ -1,0 +1,315 @@
+{
+  "proton": 6,
+  "translate": "carbon",
+  "list": [
+    {
+      "neutron": 2,
+      "decay": true,
+      "half_life": "3.5E-21",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 3,
+      "decay": true,
+      "half_life": "1.265E-1",
+      "random": [
+        {
+          "ran": 0.6,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.23,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.17,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 4,
+      "decay": true,
+      "half_life": "1.929E1",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 6,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 5,
+      "decay": true,
+      "half_life": "1.2218E3",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "B",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 6,
+      "decay": false
+    },
+    {
+      "neutron": 7,
+      "decay": false
+    },
+    {
+      "neutron": 8,
+      "decay": true,
+      "half_life": "1.79873E11",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 9,
+      "decay": true,
+      "half_life": "2.499E0",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 8,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 10,
+      "decay": true,
+      "half_life": "7.47E1",
+      "random": [
+        {
+          "ran": 0.979,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 8,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.021,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 9,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 11,
+      "decay": true,
+      "half_life": "1.936E-1",
+      "random": [
+        {
+          "ran": 0.7159,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 10,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.2841,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 9,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 12,
+      "decay": true,
+      "half_life": "9.2E-2",
+      "random": [
+        {
+          "ran": 0.685,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 11,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.315,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 10,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 13,
+      "decay": true,
+      "half_life": "4.63E-2",
+      "random": [
+        {
+          "ran": 0.47,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 11,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.46,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 12,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.07,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 10,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 14,
+      "decay": true,
+      "half_life": "1.63E-2",
+      "random": [
+        {
+          "ran": 0.72,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 12,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.28,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 13,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 15,
+      "decay": true,
+      "half_life": "3E-8",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "C",
+              "neutron": 14,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 16,
+      "decay": true,
+      "half_life": "6.1E-3",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "N",
+              "neutron": 15,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

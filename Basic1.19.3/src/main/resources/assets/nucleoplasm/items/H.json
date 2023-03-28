@@ -1,0 +1,109 @@
+{
+  "proton": 1,
+  "translate":"hydrogen",
+  "list": [
+    {
+      "neutron": 0,
+      "decay": false
+    },
+    {
+      "neutron": 1,
+      "decay": false
+    },
+    {
+      "neutron": 2,
+      "decay": true,
+      "half_life": "3.887789875E8",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "He",
+              "neutron": 1,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 3,
+      "decay": true,
+      "half_life": "1.39E-22",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "H",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 4,
+      "decay": true,
+      "half_life": "8.6E-23",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "H",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 5,
+      "decay": true,
+      "half_life": "2.9E-22",
+      "random": [
+        {
+          "ran": 0.5,
+          "items": [
+            {
+              "abbreviation": "H",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.5,
+          "items": [
+            {
+              "abbreviation": "H",
+              "neutron": 1,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 6,
+      "decay": true,
+      "half_life": "1E-20",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "H",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

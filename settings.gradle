@@ -1,8 +1,6 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        mavenLocal()
-        mavenCentral()
         maven {
             url = 'https://maven.fabric.net/'
             name = "Fabric"
@@ -27,18 +25,11 @@ pluginManagement {
             url = "https://maven.quiltmc.org/repository/release/"
             name = "quilt"
         }
-        maven {
-            name = 'spigotmc-repo'
-            url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-        }
-        maven {
-            name = 'sonatype'
-            url = 'https://oss.sonatype.org/content/groups/public/'
-        }
     }
 
 }
 
-rootProject.name = all
-
-include("nucleoplasm-multi-loader-compatible:common")
+rootProject.name = 'Nucleoplasm'
+include ':Basic1.19.3'
+include ':Forge1.19.3'
+include ':Fabric1.19.3'

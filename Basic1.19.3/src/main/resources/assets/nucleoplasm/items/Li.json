@@ -1,0 +1,218 @@
+{
+  "proton": 1,
+  "translate":"hydrogen",
+  "list": [
+    {
+      "neutron": 1,
+      "decay": true,
+      "half_life": "9.1E-23",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "He",
+              "neutron": 1,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 2,
+      "decay": true,
+      "half_life": "3.790925E-22",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "He",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 3,
+      "decay": false
+    },
+    {
+      "neutron": 4,
+      "decay": false
+    },
+    {
+      "neutron": 5,
+      "decay": true,
+      "half_life": "8.399E2",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 6,
+      "decay": true,
+      "half_life": "1.783E2",
+      "random": [
+        {
+          "ran": 0.508,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.492,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 5,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 7,
+      "decay": true,
+      "half_life": "2E-21",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 6,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 8,
+      "decay": true,
+      "half_life": "8.75E-3",
+      "random": [
+        {
+          "ran": 0.849,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 6,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.0807,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 7,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.041,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 5,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.019,
+          "items": [
+            {
+              "abbreviation": "Be",
+              "neutron": 4,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.01,
+          "items": [
+            {
+              "abbreviation": "He",
+              "neutron": 5,
+              "count": 1
+            },
+            {
+              "abbreviation": "He",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.00014,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 5,
+              "count": 1
+            },
+            {
+              "abbreviation": "H",
+              "neutron": 2,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "ran": 0.00013,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 6,
+              "count": 1
+            },
+            {
+              "abbreviation": "H",
+              "neutron": 1,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "neutron": 9,
+      "decay": true,
+      "half_life": "1E-8",
+      "random": [
+        {
+          "ran": 1.0,
+          "items": [
+            {
+              "abbreviation": "Li",
+              "neutron": 8,
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+proton: 8 # 3 to 18
+translate: oxygen
+list:
+  - neutron: 3
+    decay: true
+    half_life: "3.5095208851645054E-22"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: C
+            neutron: 3
+            count: 1
+  - neutron: 4
+    decay: true
+    half_life: "6.3366349315470245E-21"
+    random:
+      - ran: 0.6
+        items:
+          - abbreviation: C
+            neutron: 4
+            count: 1
+      - ran: 0.4
+        items:
+          - abbreviation: N
+            neutron: 4
+            count: 1
+  - neutron: 5
+    decay: true
+    half_life: "8.58E-3"
+    random:
+      - ran: 0.891
+        items:
+          - abbreviation: N
+            neutron: 6
+            count: 1
+      - ran: 0.109
+        items:
+          - abbreviation: N
+            neutron: 7
+            count: 1
+  - neutron: 6
+    decay: true
+    half_life: "7.0606E1"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: N
+            neutron: 7
+            count: 1
+  - neutron: 7
+    decay: true
+    half_life: "1.2224E2"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: N
+            neutron: 8
+            count: 1
+  - neutron: 8
+    decay: false
+  - neutron: 9
+    decay: false
+  - neutron: 10
+    decay: false
+  - neutron: 11
+    decay: true
+    half_life: "2.688E1"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: F
+            neutron: 10
+            count: 1
+  - neutron: 12
+    decay: true
+    half_life: "1.351E1"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: F
+            neutron: 11
+            count: 1
+  - neutron: 13
+    decay: true
+    half_life: "3.42E0"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: F
+            neutron: 12
+            count: 1
+  - neutron: 14
+    decay: true
+    half_life: "2.25E0"
+    random:
+      - ran: 0.78
+        items:
+          - abbreviation: F
+            neutron: 13
+            count: 1
+      - ran: 0.22
+        items:
+          - abbreviation: F
+            neutron: 12
+            count: 1
+  - neutron: 15
+    decay: true
+    half_life: "9.7E-2"
+    random:
+      - ran: 0.5799
+        items:
+          - abbreviation: F
+            neutron: 13
+            count: 1
+      - ran: 0.4201
+        items:
+          - abbreviation: F
+            neutron: 14
+            count: 1
+  - neutron: 16
+    decay: true
+    half_life: "6.5E-2"
+    random:
+      - ran: 0.5799
+        items:
+          - abbreviation: F
+            neutron: 14
+            count: 1
+      - ran: 0.4201
+        items:
+          - abbreviation: F
+            neutron: 15
+            count: 1
+  - neutron: 17
+    decay: true
+    half_life: "5.2E-8"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: O
+            neutron: 16
+            count: 1
+  - neutron: 18
+    decay: true
+    half_life: "5E-12"
+    random:
+      - ran: 1.0
+        items:
+          - abbreviation: O
+            neutron: 16
+            count: 1
