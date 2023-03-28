@@ -40,3 +40,4 @@ run/
 src/main/resources/element/~$element.xlsx
 # src/main/resources/assets/nucleoplasm/font/bsh.ttf
 # I'm going to top up all commit records to remove the binaries
+*.hprof

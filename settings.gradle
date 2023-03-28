@@ -2,13 +2,13 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
     }
 }
 
 rootProject.name = all
 
-include("module:nucleoplasm_api_1_19_4_forge")
-
-include("module:nucleoplasm_nuclide_1_19_4_forge")
-
+include ":nucleoplasm_api_1.19.4_forge"
+include ":nucleoplasm_nuclide_1.19.4_forge"
 
