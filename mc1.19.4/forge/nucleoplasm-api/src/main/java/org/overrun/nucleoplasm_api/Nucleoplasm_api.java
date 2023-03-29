@@ -45,7 +45,7 @@ public class Nucleoplasm_api {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 //        modEventBus.addListener(this::register);
-
+        MinecraftForge.EVENT_BUS.register(new Server());
         MinecraftForge.EVENT_BUS.register(this);
 
     }
@@ -59,7 +59,10 @@ public class Nucleoplasm_api {
         public void register(RegisterEvent event) {
 
             event.register(ForgeRegistries.Keys.ITEMS, helper -> {
-                helper.register(new ResourceLocation(MODID, "test_item"), new Item(new Item.Properties()));
+                registerAll.invokeT("test_item", new Item(new Item.Properties()));
+                for (var entry : registerAll.itemsMap.entrySet()) {
+                    helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
+                }
             });
         }
     }
