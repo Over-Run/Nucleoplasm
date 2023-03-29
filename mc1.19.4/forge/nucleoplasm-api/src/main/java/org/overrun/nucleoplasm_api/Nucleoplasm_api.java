@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -57,10 +58,16 @@ public class Nucleoplasm_api {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(this::register);
         }
         public void register(RegisterEvent event) {
+            registerAll.invokeT("test_item", new Item(new Item.Properties()));
+            registerAll.invokeT("test_block", new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
 
             event.register(ForgeRegistries.Keys.ITEMS, helper -> {
-                registerAll.invokeT("test_item", new Item(new Item.Properties()));
                 for (var entry : registerAll.itemsMap.entrySet()) {
+                    helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
+                }
+            });
+            event.register(ForgeRegistries.Keys.BLOCKS, helper -> {
+                for (var entry : registerAll.blocksMap.entrySet()) {
                     helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
                 }
             });
