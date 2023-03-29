@@ -1,6 +1,7 @@
 package org.overrun.nucleoplasm_api.utils;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,7 +17,7 @@ public class RegisterAll {
     public RegisterAll() {
     }
     public <T> void invokeT(Map<String, T> tMap) {
-        tMap.forEach(this::invokeT);
+        for (Map.Entry<String, T> entry : tMap.entrySet()) invokeT(entry.getKey(), entry.getValue());
     }
     public <T> void invokeT(String name, T t) {
         if (t instanceof Item item) {

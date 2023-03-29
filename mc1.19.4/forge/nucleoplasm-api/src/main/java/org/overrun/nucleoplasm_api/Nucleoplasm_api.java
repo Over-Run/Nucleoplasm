@@ -59,18 +59,13 @@ public class Nucleoplasm_api {
         }
         public void register(RegisterEvent event) {
             registerAll.invokeT("test_item", new Item(new Item.Properties()));
-            registerAll.invokeT("test_block", new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE)));
-
+            
             event.register(ForgeRegistries.Keys.ITEMS, helper -> {
                 for (var entry : registerAll.itemsMap.entrySet()) {
                     helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
                 }
             });
-            event.register(ForgeRegistries.Keys.BLOCKS, helper -> {
-                for (var entry : registerAll.blocksMap.entrySet()) {
-                    helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
-                }
-            });
+
         }
     }
 }
