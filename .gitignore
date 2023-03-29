@@ -42,3 +42,4 @@ src/main/resources/element/~$element.xlsx
 # I'm going to top up all commit records to remove the binaries
 *.hprof
 .architectury-transformer
+.github
