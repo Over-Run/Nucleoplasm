@@ -9,7 +9,7 @@ dependencies {
 archivesBaseName = archives_base
 
 architectury {
-    common()
+    common(commons.split(","))
 }
 
 publishing {

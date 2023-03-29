@@ -1,19 +1,24 @@
 package org.overrun.nucleoplasm;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.Registrar;
+import dev.architectury.registry.registries.RegistrarManager;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterAll {
-    public static final Map<String, Item> ITEMS = new HashMap<>();
-    static {
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation("nucleoplasm", "a"), new Item(new Item.Properties()));
+    public static void registerItem(String modid, Map<String, Item> items) {
+        if (!items.isEmpty()) {
+            DeferredRegister<Item> ITEMS = DeferredRegister.create(modid, Registries.ITEM);
+            for (var entry : items.entrySet()) {
+                ITEMS.register(entry.getKey(), entry::getValue);
+            }
+            ITEMS.register();
+        }
     }
-    @ExpectPlatform
-    public static void registerItem(Map<String, Item> items) {}//注册物品
 }
