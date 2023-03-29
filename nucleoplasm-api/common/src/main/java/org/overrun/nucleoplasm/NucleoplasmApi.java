@@ -13,7 +13,11 @@ public class NucleoplasmApi {
     public static final String MOD_ID = "nucleoplasm_api";
 
     public static void init() {
-        RegisterAll.registerItem(MOD_ID, ITEMS);
+        RegisterAll registerAll = new RegisterAll(MOD_ID);
+        ITEMS.put("test_mod", new Item(new Item.Properties()));
+        registerAll.invokeT(ITEMS);
+        registerAll.invokeT(BLOCKS);
+        registerAll.register();
     }
 
 }

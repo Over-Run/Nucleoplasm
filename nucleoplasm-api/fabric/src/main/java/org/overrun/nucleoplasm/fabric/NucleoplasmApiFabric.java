@@ -8,6 +8,5 @@ public class NucleoplasmApiFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         NucleoplasmApi.init();
-
     }
 }
