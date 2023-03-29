@@ -1,6 +1,0 @@
-{
-  "parent": "nucleoplasm:item/elementera",
-  "textures": {
-    "layer0": "nucleoplasm:item/element/zero/oganesson"
-  }
-}
