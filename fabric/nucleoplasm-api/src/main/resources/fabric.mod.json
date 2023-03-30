@@ -12,6 +12,9 @@
   "icon": "assets/nucleoplasm_api/icon.png",
   "environment": "*",
   "entrypoints": {
+    "server": [
+      "org.overrun.nucleoplasm_api.server.Nucleoplasm_apiServer"
+    ],
     "client": [
       "org.overrun.nucleoplasm_api.client.Nucleoplasm_apiClient"
     ],
