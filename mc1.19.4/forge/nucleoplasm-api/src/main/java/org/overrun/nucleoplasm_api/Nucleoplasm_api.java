@@ -44,28 +44,29 @@ public class Nucleoplasm_api {
 
     public Nucleoplasm_api() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModAll.registerAll(modEventBus);
 
 //        modEventBus.addListener(this::register);
-        MinecraftForge.EVENT_BUS.register(new Server());
+//        MinecraftForge.EVENT_BUS.register(new Server());
         MinecraftForge.EVENT_BUS.register(this);
 
     }
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class Server {
-        public Server() {
-
-            FMLJavaModLoadingContext.get().getModEventBus().addListener(this::register);
-        }
-        public void register(RegisterEvent event) {
-            registerAll.invokeT("test_item", new Item(new Item.Properties()));
-            
-            event.register(ForgeRegistries.Keys.ITEMS, helper -> {
-                for (var entry : registerAll.itemsMap.entrySet()) {
-                    helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
-                }
-            });
-
-        }
-    }
+//    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+//    public static class Server {
+//        public Server() {
+//
+//            FMLJavaModLoadingContext.get().getModEventBus().addListener(this::register);
+//        }
+//        public void register(RegisterEvent event) {
+//            registerAll.invokeT("test_item", new Item(new Item.Properties()));
+//
+//            event.register(ForgeRegistries.Keys.ITEMS, helper -> {
+//                for (var entry : registerAll.itemsMap.entrySet()) {
+//                    helper.register(new ResourceLocation(MODID, entry.getKey()), entry.getValue());
+//                }
+//            });
+//
+//        }
+//    }
 }
