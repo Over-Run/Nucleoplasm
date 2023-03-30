@@ -7,9 +7,9 @@ import net.minecraft.util.Identifier;
 
 import static org.overrun.nucleoplasm_api.common.Nucleoplasm_api.MODID;
 
-public class NuclideEnchant<T extends Enchantment> {
+public class NuclideEnchantRegistry<T extends Enchantment> {
     private final String modid;
-    public NuclideEnchant(String name) {
+    public NuclideEnchantRegistry(String name) {
         modid = MODID;
     }
     public T add(String name, T t) {
