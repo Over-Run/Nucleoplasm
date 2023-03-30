@@ -1,0 +1,8 @@
+
+group = maven_group_id
+version = all_mod_version
+
+allprojects {
+    version = all_mod_version
+    group = maven_group
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "nucleoplasm_api",
+  "version": "${version}",
+  "name": "nucleoplasm_api",
+  "description": "",
+  "authors": [
+    "Overrun Organization"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/nucleoplasm_api/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.overrun.nucleoplasm_api.client.Nucleoplasm_apiClient"
+    ],
+    "main": [
+      "org.overrun.nucleoplasm_api.Nucleoplasm_api"
+    ]
+  },
+  "mixins": [
+    "nucleoplasm_api.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
