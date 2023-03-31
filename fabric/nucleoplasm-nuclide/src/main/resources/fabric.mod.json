@@ -9,7 +9,7 @@
     "repo": "https://github.com/Administrator/nucleoplasm_nuclide"
   },
   "license": "MIT",
-  "icon": "assets/nucleoplasm_nuclide/icon.png",
+  "icon": "assets/nucleoplasm/nucleoplasm.png",
   "environment": "*",
   "entrypoints": {
     "server": [
