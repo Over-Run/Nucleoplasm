@@ -11,4 +11,5 @@ pluginManagement {
 rootProject.name = 'nucleoplasm'
 include(":nucleoplasm-api")
 include(":nucleoplasm-nuclide")
+include(":nucleoplasm-feature-repair")
 

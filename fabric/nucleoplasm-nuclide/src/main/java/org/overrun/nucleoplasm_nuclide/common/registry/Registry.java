@@ -57,7 +57,6 @@ public class Registry {
         ;
         private final Item item;
         RegistryItem(Item t) {
-
             this.item = Utils.ITEM_NUCLIDE_ITEM_REGISTRY.add(name().toLowerCase(Locale.ROOT), t);
         }
 

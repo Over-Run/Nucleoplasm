@@ -4,12 +4,14 @@
   "version": "${version}",
   "name": "nucleoplasm_nuclide",
   "description": "",
-  "authors": [],
+  "authors": [
+    "Overrun Organization"
+  ],
   "contact": {
     "repo": "https://github.com/Administrator/nucleoplasm_nuclide"
   },
   "license": "MIT",
-  "icon": "assets/nucleoplasm/nucleoplasm.png",
+  "icon": "assets/nucleoplasm/icon.png",
   "environment": "*",
   "entrypoints": {
     "server": [
@@ -30,5 +32,10 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "nucleoplasm_api": "1.0.0.0"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": "nucleoplasm_api"
+    }
   }
 }

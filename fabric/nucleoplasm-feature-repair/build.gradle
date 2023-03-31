@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
+    id 'fabric-loom' version "$loom_version"
     id 'maven-publish'
 }
 
@@ -19,6 +19,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
     modImplementation(project(":nucleoplasm-api")) {
         exclude(group: "com.terraformersmc")
     }
@@ -66,7 +67,7 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_$archivesBaseName" }
+        rename { "${it}_${archivesBaseName}" }
     }
 }
 

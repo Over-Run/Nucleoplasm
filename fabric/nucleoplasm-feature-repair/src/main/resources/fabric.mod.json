@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "nucleoplasm_api",
+  "id": "nucleoplasm_feature_repair",
   "version": "${version}",
-  "name": "nucleoplasm_api",
+  "name": "nucleoplasm_feature_repair",
   "description": "",
   "authors": [
     "Overrun Organization"
@@ -12,18 +12,15 @@
   "icon": "assets/nucleoplasm/icon.png",
   "environment": "*",
   "entrypoints": {
-    "server": [
-      "org.overrun.nucleoplasm_api.server.Nucleoplasm_apiServer"
-    ],
     "client": [
-      "org.overrun.nucleoplasm_api.client.Nucleoplasm_apiClient"
+      "org.overrun.nucleoplasm_feature_repair.client.Nucleoplasm_feature_repairClient"
     ],
     "main": [
-      "org.overrun.nucleoplasm_api.common.Nucleoplasm_api"
+      "org.overrun.nucleoplasm_feature_repair.common.Nucleoplasm_feature_repair"
     ]
   },
   "mixins": [
-    "nucleoplasm_api.mixins.json"
+    "nucleoplasm_feature_repair.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
@@ -32,10 +29,7 @@
   },
   "custom": {
     "modmenu": {
-      "badges": [
-        "library"
-      ],
-      "update_checker": false
+      "parent": "nucleoplasm_api"
     }
   }
 }

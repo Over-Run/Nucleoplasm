@@ -5,4 +5,11 @@ version = all_mod_version
 allprojects {
     version = all_mod_version
     group = maven_group
+
+    repositories {
+        maven {
+            name = 'TerraformersMC'
+            url = 'https://maven.terraformersmc.com/releases'
+        }
+    }
 }
