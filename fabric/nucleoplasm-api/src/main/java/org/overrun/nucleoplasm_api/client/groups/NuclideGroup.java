@@ -2,10 +2,12 @@ package org.overrun.nucleoplasm_api.client.groups;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -20,16 +22,16 @@ public class NuclideGroup {
                 .icon(() -> new ItemStack(t))
                 .build();
     }
-    public void add(@NotNull ItemStack... stacks) {
+    public void add(DefaultedList<ItemStack> stacks) {
         ItemGroupEvents.modifyEntriesEvent(item_group).register(content -> {
-            content.addAll(List.of(stacks));
+            content.addAll(stacks);
         });
     }
     public void add(Item... ts) {
-        ItemGroupEvents.modifyEntriesEvent(item_group).register(content -> {
-            for (Item t : ts) {
-                content.add(new ItemStack(t));
-            }
-        });
+        DefaultedList<ItemStack> stacks = DefaultedList.of();
+        for (Item t : ts) {
+            stacks.add(new ItemStack(t));
+        }
+        add(stacks);
     }
 }

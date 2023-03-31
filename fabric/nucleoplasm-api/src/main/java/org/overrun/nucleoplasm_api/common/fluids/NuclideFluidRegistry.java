@@ -15,25 +15,28 @@ import net.minecraft.registry.Registry;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.Identifier;
 import org.overrun.nucleoplasm_api.common.Nucleoplasm_api;
+import org.overrun.nucleoplasm_api.utils.NuclideBase;
 
 import java.util.Objects;
 
 import static org.overrun.nucleoplasm_api.common.Nucleoplasm_api.MODID;
 
-public class NuclideFluidRegistry<T extends BaseFlowableFluid> {
-    private final String modid;
+public class NuclideFluidRegistry<T extends BaseFlowableFluid> extends NuclideBase {
+
+    public NuclideFluidRegistry(NuclideBase base) {
+        super(base.getModid());
+    }
 
     public NuclideFluidRegistry() {
-        this.modid = MODID;
+        super();
     }
-    public NuclideFluidRegistry(String modid) {this.modid = modid;}
+    public NuclideFluidRegistry(String modid) {super(modid);}
     public IFluid add(String name, T still, T flowing, FabricBlockSettings blockSettings, FabricItemSettings settings) {
-        T stillFluid = Registry.register(Registries.FLUID, new Identifier(modid, name), still);
-        T flowingFluid = Registry.register(Registries.FLUID, new Identifier(modid, "flowing_" + name), flowing);
-        FluidBlock fluidBlock = Registry.register(Registries.BLOCK, new Identifier(modid, name + "_block"), new FluidBlock(stillFluid ,blockSettings));
-        BucketItem item = Registry.register(Registries.ITEM, new Identifier(modid, name + "_bucket"), new BucketItem(stillFluid, settings.maxCount(1)));
+        T stillFluid = Registry.register(Registries.FLUID, new Identifier(getModid(), name), still);
+        T flowingFluid = Registry.register(Registries.FLUID, new Identifier(getModid(), "flowing_" + name), flowing);
+        FluidBlock fluidBlock = Registry.register(Registries.BLOCK, new Identifier(getModid(), name + "_block"), new FluidBlock(stillFluid ,blockSettings));
+        BucketItem item = Registry.register(Registries.ITEM, new Identifier(getModid(), name + "_bucket"), new BucketItem(stillFluid, settings.maxCount(1)));
         return new IFluid(stillFluid, flowingFluid, fluidBlock, item);
-
     }
 
     public class IFluid {

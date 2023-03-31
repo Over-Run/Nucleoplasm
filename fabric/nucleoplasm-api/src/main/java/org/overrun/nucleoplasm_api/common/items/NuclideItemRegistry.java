@@ -6,16 +6,20 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.overrun.nucleoplasm_api.common.Nucleoplasm_api;
 import org.overrun.nucleoplasm_api.common.blocks.NuclideBlockRegistry;
+import org.overrun.nucleoplasm_api.utils.NuclideBase;
 
-public class NuclideItemRegistry<T extends Item> {
-    private final String modid;
+public class NuclideItemRegistry<T extends Item> extends NuclideBase {
+
+    public NuclideItemRegistry(NuclideBase base) {
+        super(base.getModid());
+    }
     public NuclideItemRegistry() {
-        modid = Nucleoplasm_api.MODID;
+        super();
     }
     public NuclideItemRegistry(String modid) {
-        this.modid = modid;
+        super(modid);
     }
     public T add(String name, T t)  {
-        return Registry.register(Registries.ITEM, new Identifier(modid, name), t);
+        return Registry.register(Registries.ITEM, new Identifier(getModid(), name), t);
     }
 }

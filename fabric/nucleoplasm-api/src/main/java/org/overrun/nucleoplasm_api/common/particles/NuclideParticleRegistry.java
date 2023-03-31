@@ -10,20 +10,25 @@ import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import org.overrun.nucleoplasm_api.utils.NuclideBase;
 
 import static org.overrun.nucleoplasm_api.common.Nucleoplasm_api.MODID;
 
-public class NuclideParticleRegistry<T extends DefaultParticleType> {
-    private final String modid;
+public class NuclideParticleRegistry<T extends DefaultParticleType> extends NuclideBase {
+
+
+    public NuclideParticleRegistry(NuclideBase base) {
+        super(base.getModid());
+    }
     public NuclideParticleRegistry() {
-        modid = MODID;
+        super();
     }
     public NuclideParticleRegistry(String modid) {
-        this.modid = modid;
+        super(modid);
     }
 
     public T add(String name, T t) {
-        return Registry.register(Registries.PARTICLE_TYPE, new Identifier(modid, name), t);
+        return Registry.register(Registries.PARTICLE_TYPE, new Identifier(getModid(), name), t);
     }
     public void client(ParticleFactoryRegistry registry, T t) {
         registry.register(t, Factory::new);
