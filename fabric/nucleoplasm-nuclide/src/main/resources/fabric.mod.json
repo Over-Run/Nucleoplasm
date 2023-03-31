@@ -12,11 +12,14 @@
   "icon": "assets/nucleoplasm_nuclide/icon.png",
   "environment": "*",
   "entrypoints": {
+    "server": [
+      "org.overrun.nucleoplasm_nuclide.server.Nucleoplasm_nuclideServer"
+    ],
     "client": [
       "org.overrun.nucleoplasm_nuclide.client.Nucleoplasm_nuclideClient"
     ],
     "main": [
-      "org.overrun.nucleoplasm_nuclide.Nucleoplasm_nuclide"
+      "org.overrun.nucleoplasm_nuclide.common.Nucleoplasm_nuclide"
     ]
   },
   "mixins": [
