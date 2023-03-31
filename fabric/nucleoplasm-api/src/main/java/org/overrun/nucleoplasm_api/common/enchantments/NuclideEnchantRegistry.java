@@ -1,6 +1,7 @@
 package org.overrun.nucleoplasm_api.common.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

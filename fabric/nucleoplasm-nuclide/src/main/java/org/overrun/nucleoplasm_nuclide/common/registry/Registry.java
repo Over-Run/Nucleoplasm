@@ -3,12 +3,33 @@ package org.overrun.nucleoplasm_nuclide.common.registry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import org.overrun.nucleoplasm_nuclide.common.Nucleoplasm_nuclide;
+import org.overrun.nucleoplasm_nuclide.common.enchantments.TestEnchantment;
 
 import java.util.Locale;
 
 public class Registry {
+    public enum RegistryEnchant {
+        test_enchant(new TestEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON, 1, EquipmentSlot.MAINHAND));
+        private final Enchantment enchantment;
+        RegistryEnchant(Enchantment enchantment) {
+            this.enchantment = Utils.ENCHANTMENT_NUCLIDE_BLOCK_REGISTRY.add(name(), enchantment);
+        }
+
+        public static void init() {
+            for (var value : values()) {
+                Nucleoplasm_nuclide.logger.info("register " + value.name());
+            }
+        }
+
+        public Enchantment getEnchantment() {
+            return enchantment;
+        }
+    }
     public enum RegistryBlock {
         test_block(
                 new Block(FabricBlockSettings.of(Material.STONE)),
