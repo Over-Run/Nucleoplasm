@@ -18,10 +18,5 @@ public class Nucleoplasm_api implements ModInitializer {
     public static NuclideGroup group;
     @Override
     public void onInitialize() {
-        Item testBlock = blocks.add("test_block", new Block(FabricBlockSettings.of(Material.STONE)), true);
-        Item testItem = items.add("test_item", new Item(new Item.Settings()));
-        group = new NuclideGroup("group", testItem);
-        group.add(testItem, testBlock);
-
     }
 }
