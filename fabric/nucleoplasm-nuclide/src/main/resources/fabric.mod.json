@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "nucleoplasm_nuclide",
+  "version": "${version}",
+  "name": "nucleoplasm_nuclide",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Administrator/nucleoplasm_nuclide"
+  },
+  "license": "MIT",
+  "icon": "assets/nucleoplasm_nuclide/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.overrun.nucleoplasm_nuclide.client.Nucleoplasm_nuclideClient"
+    ],
+    "main": [
+      "org.overrun.nucleoplasm_nuclide.Nucleoplasm_nuclide"
+    ]
+  },
+  "mixins": [
+    "nucleoplasm_nuclide.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
