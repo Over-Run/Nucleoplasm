@@ -4,6 +4,7 @@
   "package": "org.overrun.nucleoplasm_feature_repair.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "RailMachineRepair"
   ],
   "client": [
   ],
