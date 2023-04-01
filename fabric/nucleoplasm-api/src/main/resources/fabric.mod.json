@@ -25,6 +25,7 @@
   "mixins": [
     "nucleoplasm_api.mixins.json"
   ],
+  "accessWidener": "nucleoplasm.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
