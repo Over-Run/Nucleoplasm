@@ -13,7 +13,7 @@ public class Nucleoplasm_nuclide implements ModInitializer {
     public void onInitialize() {
         Registry.RegistryEnchant.init();
         Registry.RegistryBlock.init();
-        Registry.RegistryItem.init();
+        Registry.RegistryElementItem.init();
 
     }
 }

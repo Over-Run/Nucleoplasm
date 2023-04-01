@@ -9,6 +9,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import org.overrun.nucleoplasm_nuclide.common.Nucleoplasm_nuclide;
 import org.overrun.nucleoplasm_nuclide.common.enchantments.TestEnchantment;
+import org.overrun.nucleoplasm_nuclide.common.items.BaseNuclideItem;
 
 import java.util.Locale;
 
@@ -52,15 +53,15 @@ public class Registry {
         }
 
     }
-    public enum RegistryItem {
-        test_item(new Item(new Item.Settings())),
+    public enum RegistryElementItem {
+
         ;
-        private final Item item;
-        RegistryItem(Item t) {
+        private final BaseNuclideItem item;
+        RegistryElementItem(BaseNuclideItem t) {
             this.item = Utils.ITEM_NUCLIDE_ITEM_REGISTRY.add(name().toLowerCase(Locale.ROOT), t);
         }
 
-        public Item getItem() {
+        public BaseNuclideItem getItem() {
             return item;
         }
 
