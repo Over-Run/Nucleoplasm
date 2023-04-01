@@ -14,6 +14,7 @@ public class BaseNuclideItem extends Item {
         super(settings);
     }
 
+
     @Override
     public ItemStack getDefaultStack() {
         ItemStack defaultStack = super.getDefaultStack();
