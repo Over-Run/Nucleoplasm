@@ -78,4 +78,10 @@ public class ElementItem extends Item {
         }
         super.appendTooltip(stack, world, tooltip, context);
     }
+
+    @Override
+    public String getTranslationKey(ItemStack stack) {
+        NbtCompound nbt = stack.getNbt() != null? stack.getNbt() : new NbtCompound();
+        return empty().append(Text.translatable(super.getTranslationKey())).getString() + nbt.getFloat("nuclear_mass_number");
+    }
 }
