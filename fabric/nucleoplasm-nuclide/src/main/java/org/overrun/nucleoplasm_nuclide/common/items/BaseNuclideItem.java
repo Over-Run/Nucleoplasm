@@ -9,9 +9,10 @@ import net.minecraft.nbt.NbtCompound;
  */
 public class BaseNuclideItem extends Item {
 
-
+    private final int max_nuclear_mass_number;
     public BaseNuclideItem(Settings settings, int max_nuclear_mass_number) {
         super(settings);
+        this.max_nuclear_mass_number = max_nuclear_mass_number;
     }
 
 
@@ -20,7 +21,12 @@ public class BaseNuclideItem extends Item {
         ItemStack defaultStack = super.getDefaultStack();
         NbtCompound nbt = defaultStack.getNbt() != null ? defaultStack.getNbt() : new NbtCompound();
         String[] split = super.getTranslationKey().split("\\.");
-        nbt.putInt("proton", proton(split[split.length - 1]));
+        int proton = proton(split[split.length - 1]);
+        nbt.putInt("proton", proton);//质子数
+        nbt.putInt("neutron", max_nuclear_mass_number - proton);//中子数
+        nbt.putInt("electron", max_nuclear_mass_number - proton);
+        nbt.putDouble("relative_molecular_mass", nbt.getInt("proton")*1.007 + nbt.getInt("neutron")*1.008 + (double) nbt.getInt("electron") / 1836);//相对分子质量
+        nbt.putInt("nuclear_mass_number", nbt.getInt("proton") + nbt.getInt("neutron"));//质量数
         defaultStack.setNbt(nbt);
         return defaultStack;
     }
