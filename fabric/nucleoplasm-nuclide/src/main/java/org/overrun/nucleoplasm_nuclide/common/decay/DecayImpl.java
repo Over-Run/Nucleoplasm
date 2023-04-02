@@ -1,5 +1,7 @@
 package org.overrun.nucleoplasm_nuclide.common.decay;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.collection.DefaultedList;
 import org.overrun.nucleoplasm_nuclide.common.decay.beta.DoubleJustBetaDecay;
 import org.overrun.nucleoplasm_nuclide.common.decay.beta.DoubleNegativeBetaDecay;
 import org.overrun.nucleoplasm_nuclide.common.decay.beta.JustBetaDecay;
@@ -18,8 +20,19 @@ import org.overrun.nucleoplasm_nuclide.common.decay.nuclear_launch.ClusterDecay;
 import org.overrun.nucleoplasm_nuclide.common.decay.nuclear_launch.proton.ProtonEmissionDecay;
 import org.overrun.nucleoplasm_nuclide.common.items.BaseNuclideItem;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class DecayImpl<T extends BaseNuclideItem> {
-    public DecayImpl() {}
+    private final DefaultedList<ItemStack> stacks = DefaultedList.of();
+    public DecayImpl() {
+    }
+
+    public DefaultedList<ItemStack> getStacks() {
+        return stacks;
+    }
+
+
     public static <T extends BaseNuclideItem> DecayImpl<T> get(String decayType) {
         return switch (decayType) {
             case "β−"               -> new NegativeBetaDecay<>();
