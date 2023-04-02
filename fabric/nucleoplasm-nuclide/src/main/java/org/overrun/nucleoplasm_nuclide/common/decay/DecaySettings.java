@@ -14,4 +14,5 @@ public class DecaySettings {
             return lower_name;
         }
     }
+
 }

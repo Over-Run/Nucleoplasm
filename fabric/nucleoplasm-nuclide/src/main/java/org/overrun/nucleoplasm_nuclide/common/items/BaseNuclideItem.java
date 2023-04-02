@@ -1,8 +1,16 @@
 package org.overrun.nucleoplasm_nuclide.common.items;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.text.Text;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
+import static net.minecraft.text.Text.*;
 
 /**
  * @since 基本实现注册
@@ -30,6 +38,30 @@ public class BaseNuclideItem extends Item {
         defaultStack.setNbt(nbt);
         return defaultStack;
     }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        NbtCompound nbt = stack.getNbt();
+        if (nbt != null) {
+            tooltip.add(
+                    empty().append(translatable("nucleoplasm.proton")).append(of(String.valueOf(nbt.getInt("proton"))))
+            );
+            tooltip.add(
+                    empty().append(translatable("nucleoplasm.neutron")).append(of(String.valueOf(nbt.getInt("neutron"))))
+            );
+            tooltip.add(
+                    empty().append(translatable("nucleoplasm.electron")).append(of(String.valueOf(nbt.getInt("electron"))))
+            );
+            tooltip.add(
+                    empty().append(translatable("nucleoplasm.relative.molecular.mass")).append(of(String.format("%.6f", nbt.getDouble("relative_molecular_mass"))))
+            );
+            tooltip.add(
+                    empty().append(translatable("nucleoplasm.nuclear.mass.number")).append(of(String.valueOf(nbt.getInt("nuclear_mass_number"))))
+            );
+        }
+        super.appendTooltip(stack, world, tooltip, context);
+    }
+
     public int proton(String name) {
         return switch (name) {
             case "hydrogen"         ->        1;
