@@ -120,7 +120,7 @@ public class BaseNuclideItem extends Item {
             case "uranium"          ->       92;
             case "neptunium"        ->       93;
             case "plutonium"        ->       94;
-            case "amenicium"        ->       95;
+            case "americium"        ->       95;
             case "curium"           ->       96;
             case "berkelium"        ->       97;
             case "californium"      ->       98;
