@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "nucleoplasm_api",
+  "version": "${version}",
+  "name": "nucleoplasm api",
+  "description": "",
+  "authors": [
+    "Overrun Organization"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "Insert License Here",
+  "icon": "assets/examplemod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.examplemod.fabric.ExampleModFabric"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.2",
+    "architectury": ">=6.2.43"
+  }
+}
