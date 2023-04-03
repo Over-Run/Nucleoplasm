@@ -12,14 +12,6 @@
   "icon": "assets/nucleoplasm/icon.png",
   "environment": "*",
   "entrypoints": {
-    "server": [
-      "org.overrun.nucleoplasm_api.server.Nucleoplasm_apiServer"
-    ],
-    "client": [
-    ],
-    "main": [
-      "org.overrun.nucleoplasm_api.common.Nucleoplasm_api"
-    ]
   },
   "mixins": [
     "nucleoplasm_api.mixins.json"

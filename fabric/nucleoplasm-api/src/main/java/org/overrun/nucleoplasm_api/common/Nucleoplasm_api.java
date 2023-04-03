@@ -6,13 +6,8 @@ import net.minecraft.item.Item;
 import org.overrun.nucleoplasm_api.common.blocks.NuclideBlockRegistry;
 import org.overrun.nucleoplasm_api.common.items.NuclideItemRegistry;
 
-public class Nucleoplasm_api implements ModInitializer {
+public class Nucleoplasm_api {
     public static final String MODID = "nucleoplasm";
     public static final String THIS_MODID = "nucleoplasm_api";
 
-    public static final NuclideBlockRegistry<Block> blocks = new NuclideBlockRegistry<>();
-    public static final NuclideItemRegistry<Item> items = new NuclideItemRegistry<>();
-    @Override
-    public void onInitialize() {
-    }
 }
