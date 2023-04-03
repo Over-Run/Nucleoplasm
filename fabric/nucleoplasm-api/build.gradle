@@ -1,5 +1,4 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
     id 'maven-publish'
 }
 loom {
@@ -23,19 +22,6 @@ dependencies {
     }
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-}
-
-processResources {
-    inputs.property "version", version
-    inputs.property "minecraft_version", alpha_version
-    inputs.property "loader_version", loader_version
-    filteringCharset "UTF-8"
-
-    filesMatching("fabric.mod.json") {
-        expand "version": version,
-                "minecraft_version": alpha_version,
-                "loader_version": loader_version
-    }
 }
 
 def targetJavaVersion = 17

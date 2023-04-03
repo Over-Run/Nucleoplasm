@@ -1,8 +1,15 @@
+plugins {
+    id 'java'
+    id 'fabric-loom' version "${loom_version}" apply false
+}
 
 group = maven_group_id
 version = all_mod_version
 
-allprojects {
+subprojects {
+
+    apply plugin: "fabric-loom"
+
     version = all_mod_version
     group = maven_group
 
@@ -10,6 +17,19 @@ allprojects {
         maven {
             name = 'TerraformersMC'
             url = 'https://maven.terraformersmc.com/releases'
+        }
+    }
+
+    processResources {
+        inputs.property "version", version
+        inputs.property "minecraft_version", alpha_version
+        inputs.property "loader_version", loader_version
+        filteringCharset "UTF-8"
+
+        filesMatching("fabric.mod.json") {
+            expand "version": version,
+                    "minecraft_version": alpha_version,
+                    "loader_version": loader_version
         }
     }
 }

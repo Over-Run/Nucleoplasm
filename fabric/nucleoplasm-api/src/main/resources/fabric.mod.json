@@ -16,7 +16,6 @@
       "org.overrun.nucleoplasm_api.server.Nucleoplasm_apiServer"
     ],
     "client": [
-      "org.overrun.nucleoplasm_api.client.Nucleoplasm_apiClient"
     ],
     "main": [
       "org.overrun.nucleoplasm_api.common.Nucleoplasm_api"
@@ -35,8 +34,7 @@
     "modmenu": {
       "badges": [
         "library"
-      ],
-      "update_checker": false
+      ]
     }
   }
 }

@@ -31,7 +31,7 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "nucleoplasm_api": "1.0.0.0"
+    "nucleoplasm_api": "${all_mod_version}"
   },
   "custom": {
     "modmenu": {
