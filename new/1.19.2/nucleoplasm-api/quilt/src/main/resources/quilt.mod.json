@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "mixin": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
+    "nucleoplasm-api.mixins.json",
+    "nucleoplasm-api-common.mixins.json"
   ],
   "quilt_loader": {
     "group": "${group}",
@@ -15,12 +15,12 @@
       "sources": ""
     },
     "license": "MIT License",
-    "icon": "assets/examplemod/icon.png",
+    "icon": "assets/nucleoplasm_api/icon.png",
     "intermediate_mappings": "net.fabricmc:intermediary",
     "environment": "*",
     "entrypoints": {
       "init": [
-        "net.examplemod.quilt.ExampleModQuilt"
+        "org.overrun.nucleoplasm.api.quilt.NucleoplasmApiQuilt"
       ]
     },
     "depends": [

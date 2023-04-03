@@ -11,12 +11,12 @@
     "homepage": "",
     "sources": ""
   },
-  "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT License",
+  "icon": "assets/nucleoplasm_api/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+      "org.overrun.nucleoplasm.api.fabric.NucleoplasmApiFabric"
     ]
   },
   "depends": {
