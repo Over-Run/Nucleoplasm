@@ -2,18 +2,14 @@ package org.overrun.nucleoplasm_api.client.groups;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
-import org.jetbrains.annotations.NotNull;
 import org.overrun.nucleoplasm_api.utils.NuclideBase;
 
-import java.util.List;
-
-import static org.overrun.nucleoplasm_api.common.Nucleoplasm_api.MODID;
+import static org.overrun.nucleoplasm_api.utils.NucleoplasmUtils.MODID;
 
 public class NuclideGroup extends NuclideBase {
     private final ItemGroup item_group;

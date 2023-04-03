@@ -4,8 +4,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import org.overrun.nucleoplasm_api.common.Nucleoplasm_api;
-import org.overrun.nucleoplasm_api.common.blocks.NuclideBlockRegistry;
 import org.overrun.nucleoplasm_api.utils.NuclideBase;
 
 public class NuclideItemRegistry<T extends Item> extends NuclideBase {

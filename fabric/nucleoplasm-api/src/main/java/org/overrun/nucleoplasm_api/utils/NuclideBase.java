@@ -1,6 +1,6 @@
 package org.overrun.nucleoplasm_api.utils;
 
-import static org.overrun.nucleoplasm_api.common.Nucleoplasm_api.MODID;
+import static org.overrun.nucleoplasm_api.utils.NucleoplasmUtils.MODID;
 
 public class NuclideBase {
     private final String modid;

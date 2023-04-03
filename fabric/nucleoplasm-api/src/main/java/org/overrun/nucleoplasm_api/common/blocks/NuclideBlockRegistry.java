@@ -6,10 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import org.overrun.nucleoplasm_api.common.enchantments.NuclideEnchantRegistry;
 import org.overrun.nucleoplasm_api.utils.NuclideBase;
-
-import static org.overrun.nucleoplasm_api.common.Nucleoplasm_api.MODID;
 
 public class NuclideBlockRegistry<T extends Block> extends NuclideBase {
 
