@@ -6,7 +6,7 @@ license = "MIT License"
 [[mods]]
 modId = "nucleoplasm_api"
 version = "${version}"
-displayName = "nucleoplasm api"
+displayName = "Nucleoplasm Api Mod"
 authors = "Overrun Organization"
 description = '''
 '''

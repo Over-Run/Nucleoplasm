@@ -8,11 +8,11 @@
     "group": "${group}",
     "id": "nucleoplasm_api",
     "version": "${version}",
-    "name": "nucleoplasm api",
-    "description": "",
+    "name": "Nucleoplasm Api Mod",
+    "description": "This is an example description! Tell everyone what your mod is about!",
     "authors": ["Overrun Organization"],
     "contact": {
-      "sources": ""
+      "sources": "https://github.com/architectury/architectury-templates"
     },
     "license": "MIT License",
     "icon": "assets/nucleoplasm_api/icon.png",
@@ -20,7 +20,7 @@
     "environment": "*",
     "entrypoints": {
       "init": [
-        "org.overrun.nucleoplasm.api.quilt.NucleoplasmApiQuilt"
+        "org.overrun.nucleoplasm.api.quilt.ExampleModQuilt"
       ]
     },
     "depends": [

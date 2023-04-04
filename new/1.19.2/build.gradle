@@ -1,10 +1,2 @@
-plugins {
-    id 'java'
-}
-
-group = 'io.github.over-run'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
+version = mod_version
+group = maven_group

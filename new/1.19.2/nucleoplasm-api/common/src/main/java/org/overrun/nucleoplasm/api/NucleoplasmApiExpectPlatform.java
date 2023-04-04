@@ -13,7 +13,7 @@ public class NucleoplasmApiExpectPlatform {
      * platform sub-package, with its class suffixed with {@code Impl}.
      * <p>
      * Example:
-     * Expect: org.overrun.nucleoplasm.api.ExampleExpectPlatform#getConfigDirectory()
+     * Expect: net.examplemod.ExampleExpectPlatform#getConfigDirectory()
      * Actual Fabric: net.examplemod.fabric.ExampleExpectPlatformImpl#getConfigDirectory()
      * Actual Forge: net.examplemod.forge.ExampleExpectPlatformImpl#getConfigDirectory()
      * <p>

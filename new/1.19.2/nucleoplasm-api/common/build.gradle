@@ -3,7 +3,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/nucleoplasm-api.accesswidener")
+    accessWidenerPath = file("src/main/resources/${archives_base_name}.accesswidener")
 }
 
 dependencies {

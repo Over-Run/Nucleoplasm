@@ -1,7 +1,7 @@
 package org.overrun.nucleoplasm.api.forge;
 
-import org.overrun.nucleoplasm.api.NucleoplasmApiExpectPlatform;
 import net.minecraftforge.fml.loading.FMLPaths;
+import org.overrun.nucleoplasm.api.NucleoplasmApiExpectPlatform;
 
 import java.nio.file.Path;
 

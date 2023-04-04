@@ -8,7 +8,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath = project("$common_project").loom.accessWidenerPath
+    accessWidenerPath = project(":${archives_base_name}:common").loom.accessWidenerPath
 }
 
 configurations {
@@ -25,8 +25,10 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${architectury_version}"
 
-    common(project(path: "$common_project", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: "$common_project", configuration: "transformProductionFabric")) { transitive false }
+    common(project(path: ":${archives_base_name}:common", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":${archives_base_name}:common", configuration: "transformProductionFabric")) { transitive false }
+    common(project(path: ":${archives_base_name}:fabric-like", configuration: "namedElements")) { transitive false }
+    shadowCommon(project(path: ":${archives_base_name}:fabric-like", configuration: "transformProductionFabric")) { transitive false }
 }
 
 processResources {
@@ -56,7 +58,7 @@ jar {
 }
 
 sourcesJar {
-    def commonSources = project("$common_project").sourcesJar
+    def commonSources = project(":${archives_base_name}:common").sourcesJar
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
 }

@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "id": "nucleoplasm_api",
   "version": "${version}",
-  "name": "nucleoplasm api",
+  "name": "Nucleoplasm Api Mod",
   "description": "",
   "authors": [
-    "Overrun Organization"
+    "Me!"
   ],
   "contact": {
     "homepage": "",
@@ -19,6 +19,10 @@
       "org.overrun.nucleoplasm.api.fabric.NucleoplasmApiFabric"
     ]
   },
+  "mixins": [
+    "nucleoplasm-api.mixins.json",
+    "nucleoplasm-api-common.mixins.json"
+  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.19.2",

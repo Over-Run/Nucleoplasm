@@ -6,10 +6,12 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+def api = "nucleoplasm-api"
+include(":${api}")
+include("${api}:common")
+include("${api}:fabric-like")
+include("${api}:fabric")
+include("${api}:quilt")
+include("${api}:forge")
 
-rootProject.name = 'nucleoplasm'
-include(":nucleoplasm-api")
-include("nucleoplasm-api:common")
-include("nucleoplasm-api:fabric")
-include("nucleoplasm-api:forge")
-include("nucleoplasm-api:quilt")
+rootProject.name = "nucleoplasm"
