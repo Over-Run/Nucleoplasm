@@ -8,6 +8,9 @@ import org.overrun.nucleoplasm.api.NucleoplasmApi;
 
 public class NRegistry<T> {
     private final DeferredRegister<T> register;
+    public NRegistry(String modid,ResourceKey<Registry<T>> key) {
+        register = DeferredRegister.create(modid, key);
+    }
     public NRegistry(ResourceKey<Registry<T>> key) {
         register = DeferredRegister.create(NucleoplasmApi.MOD_ID, key);
     }

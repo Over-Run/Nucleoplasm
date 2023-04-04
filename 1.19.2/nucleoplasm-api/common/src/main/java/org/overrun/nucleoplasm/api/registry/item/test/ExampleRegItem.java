@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.function.Function;
 
 public enum ExampleRegItem {
-    a(settings -> new ExampleItem(new Item.Properties()));
+    example_item(settings -> new ExampleItem(new Item.Properties()));
     private final Item item;
     private final String id;
     private RegistrySupplier<Item> supplier;
@@ -24,4 +24,7 @@ public enum ExampleRegItem {
         registry.register();
     }
 
+    public RegistrySupplier<Item> supplier() {
+        return supplier;
+    }
 }
