@@ -20,7 +20,7 @@
     "environment": "*",
     "entrypoints": {
       "init": [
-        "org.overrun.nucleoplasm.api.quilt.NucleoplasmApiQuilt"
+        "org.overrun.nucleoplasm.nuclide.quilt.NucleoplasmNuclideQuilt"
       ]
     },
     "depends": [
@@ -39,6 +39,10 @@
       {
         "id": "architectury",
         "version": ">=6.2.43"
+      },
+      {
+        "id": "nucleoplasm_api",
+        "version": ">=${version}"
       }
     ]
   }

@@ -7,12 +7,19 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-def api = "nucleoplasm-api"
-include(":${api}")
-include("${api}:common")
-include("${api}:fabric-like")
-include("${api}:fabric")
-include("${api}:quilt")
-include("${api}:forge")
+def api = new String[] {
+        "nucleoplasm-api",
+        "nucleoplasm-nuclide"
+}
+for (final def a in api ) {
+    include(":${a}")
+    include("${a}:common")
+    include("${a}:fabric-like")
+    include("${a}:fabric")
+    include("${a}:quilt")
+    include("${a}:forge")
+}
+
+
 
 rootProject.name = "nucleoplasm"

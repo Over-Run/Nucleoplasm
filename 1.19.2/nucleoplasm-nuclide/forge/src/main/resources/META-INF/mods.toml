@@ -1,0 +1,40 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+#issueTrackerURL = ""
+license = "${license}"
+
+[[mods]]
+modId = "nucleoplasm_nuclide"
+version = "${version}"
+displayName = "Nucleoplasm Nuclide Mod"
+authors = "${org_name}"
+description = "${mod_description}"
+#logoFile = ""
+
+[[dependencies.nucleoplasm_nuclide]]
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.nucleoplasm_nuclide]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.nucleoplasm_nuclide]]
+modId = "architectury"
+mandatory = true
+versionRange = "[6.2.43,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.nucleoplasm_nuclide]]
+modId = "nucleoplasm_api"
+mandatory = true
+versionRange = "[${version},)"
+ordering = "AFTER"
+side = "BOTH"

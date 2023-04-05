@@ -3,21 +3,22 @@ architectury {
 }
 
 loom {
-    accessWidenerPath = project(":${archives_base_name}:common").loom.accessWidenerPath
+    accessWidenerPath = file("src/main/resources/${archives_base_name}.accesswidener")
 }
 
 dependencies {
+    // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
+    // Do NOT use other classes from fabric loader
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "dev.architectury:architectury-fabric:${architectury_version}"
+    modApi "dev.architectury:architectury:${architectury_version}"
+    modApi "io.github.over-run:nucleoplasm-api-common:${mod_version}"
 
-    compileClasspath(project(path: ":${archives_base_name}:common", configuration: "namedElements")) { transitive false }
 }
 
 publishing {
     publications {
-        mavenFabric(MavenPublication) {
+        mavenCommon(MavenPublication) {
             artifactId = archives_base_name + "-" + project.name
             from components.java
         }
