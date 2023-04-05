@@ -9,12 +9,12 @@
     "id": "nucleoplasm_api",
     "version": "${version}",
     "name": "Nucleoplasm Api Mod",
-    "description": "This is an example description! Tell everyone what your mod is about!",
-    "authors": ["Overrun Organization"],
+    "description": "${mod_description}",
+    "authors": ["${org_name}"],
     "contact": {
-      "sources": "https://github.com/architectury/architectury-templates"
+      "sources": ""
     },
-    "license": "MIT License",
+    "license": "${license}",
     "icon": "assets/nucleoplasm_api/icon.png",
     "intermediate_mappings": "net.fabricmc:intermediary",
     "environment": "*",

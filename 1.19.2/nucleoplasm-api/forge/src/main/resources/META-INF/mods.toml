@@ -1,15 +1,14 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 #issueTrackerURL = ""
-license = "MIT License"
+license = "${license}"
 
 [[mods]]
 modId = "nucleoplasm_api"
 version = "${version}"
 displayName = "Nucleoplasm Api Mod"
-authors = "Overrun Organization"
-description = '''
-'''
+authors = "${org_name}"
+description = "${mod_description}"
 #logoFile = ""
 
 [[dependencies.nucleoplasm_api]]

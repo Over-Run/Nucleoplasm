@@ -3,15 +3,15 @@
   "id": "nucleoplasm_api",
   "version": "${version}",
   "name": "Nucleoplasm Api Mod",
-  "description": "",
+  "description": "${mod_description}",
   "authors": [
-    "Me!"
+    "${org_name}"
   ],
   "contact": {
     "homepage": "",
     "sources": ""
   },
-  "license": "MIT License",
+  "license": "${license}",
   "icon": "assets/nucleoplasm_api/icon.png",
   "environment": "*",
   "entrypoints": {

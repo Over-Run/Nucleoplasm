@@ -40,12 +40,18 @@ dependencies {
 }
 
 processResources {
-    inputs.property "group", rootProject.maven_group
+    inputs.property "group", maven_group
     inputs.property "version", project.version
+    inputs.property "org_name", org_name
+    inputs.property "license", license
+    inputs.property "mod_description", mod_description
 
     filesMatching("quilt.mod.json") {
-        expand "group": rootProject.maven_group,
-                "version": project.version
+        expand "group": maven_group,
+                "version": project.version,
+                "org_name": org_name,
+                "license": license,
+                "mod_description": mod_description
     }
 }
 
