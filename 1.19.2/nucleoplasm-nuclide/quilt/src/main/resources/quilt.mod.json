@@ -39,10 +39,6 @@
       {
         "id": "architectury",
         "version": ">=6.2.43"
-      },
-      {
-        "id": "nucleoplasm_api",
-        "version": ">=${version}"
       }
     ]
   }

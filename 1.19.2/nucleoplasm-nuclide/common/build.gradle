@@ -12,8 +12,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury:${architectury_version}"
-    modApi "io.github.over-run:nucleoplasm-api-common:${mod_version}"
-
+//    modApi "io.github.over-run:nucleoplasm-api-common:${mod_version}"
 }
 
 publishing {

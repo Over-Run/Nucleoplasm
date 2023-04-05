@@ -1,6 +1,7 @@
 # Nucleoplasm
 
 - [English](README.md)
+- [教程列表](tutorials/list.md)
 - [没有人看的许可证](LICENSE)
 - [更新记录](changelog_cn.txt)
 
@@ -8,11 +9,8 @@
 
 # projects
 
-- [ ] nucleoplasm
-
-# nucleoplasm
-    api暂时为空，写一些共同部分
-    nuclide写核元素
+- [x] nucleoplasm-api       30%
+- [x] nucleoplasm-nuclide    1%
 
 ## Goals
 
@@ -22,7 +20,7 @@
     - [ ] 中子分离机
     - [ ] 中子置换机
 - [ ] 方块与物品
-    - [x] 元素周期表
+    - [ ] 元素周期表
     - [ ] 核素
     - [ ] 化合物
     - [ ] 共价键

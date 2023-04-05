@@ -31,10 +31,10 @@ mandatory = true
 versionRange = "[6.2.43,)"
 ordering = "AFTER"
 side = "BOTH"
-
-[[dependencies.nucleoplasm_nuclide]]
-modId = "nucleoplasm_api"
-mandatory = true
-versionRange = "[${version},)"
-ordering = "AFTER"
-side = "BOTH"
+#
+#[[dependencies.nucleoplasm_nuclide]]
+#modId = "nucleoplasm_api"
+#mandatory = true
+#versionRange = "[${version},)"
+#ordering = "AFTER"
+#side = "BOTH"

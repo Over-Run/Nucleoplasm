@@ -2,19 +2,8 @@
 
 # registry (item,block,...)
 
-## using NRegistry class
-    NRegistry<T> tReg = new NRegistry<>(ResourceKey<Registry<T>> register);
-or
-
-    NRegistry<T> tReg = new NRegistry<>(String modid,ResourceKey<Registry<T>> register);
-such as
-
-    NRegistry<Item> items = new NRegistry<>("nucleoplasm" ,Registry.ITEM_REGISTRY);
-
-code_example
-
-    public static final NRegistry<Item> items = new NRegistry<>(Registry.ITEM_REGISTRY);
-
+## using DeferredRegister class
+    DeferredRegister<Item> itemNRegistry = DeferredRegister.create(NucleoplasmNuclide.MOD_ID, Registry.ITEM_REGISTRY);
 
 ## using enum
     public enum ExampleRegItem {
@@ -27,9 +16,9 @@ code_example
             id = name().toLowerCase(Locale.ROOT);
         }
 
-        public static void init(NRegistry<Item> registry) {
+        public static void init(DeferredRegister<Item> registry) {
             for (ExampleRegItem value : values()) {
-                value.supplier = registry.add(value.id, value.item);
+                value.supplier = registry.register(value.id, value.item);
             }
             registry.register();
         }
@@ -43,3 +32,6 @@ code_example
     public static void init() {
         ExampleRegItem.init(items);
     }
+	
+## such as
+nucleoplasm nuclide mod -> RegItem.class

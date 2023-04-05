@@ -1,5 +1,6 @@
 package org.overrun.nucleoplasm.api.fabric;
 
+import org.overrun.nucleoplasm.api.NucleoplasmApi;
 import org.overrun.nucleoplasm.api.NucleoplasmApiExpectPlatform;
 import net.fabricmc.loader.api.FabricLoader;
 

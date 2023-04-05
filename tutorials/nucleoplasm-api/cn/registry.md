@@ -3,17 +3,7 @@
 # 注册 (物品,方块等)
 
 ## 使用 NRegistry 类
-    NRegistry<T> tReg = new NRegistry<>(ResourceKey<Registry<T>> register);
-或者
-
-    NRegistry<T> tReg = new NRegistry<>(String modid,ResourceKey<Registry<T>> register);
-例如
-
-    NRegistry<Item> items = new NRegistry<>("nucleoplasm" ,Registry.ITEM_REGISTRY);
-
-代码示例
-
-    public static final NRegistry<Item> items = new NRegistry<>(Registry.ITEM_REGISTRY);
+    DeferredRegister<Item> itemNRegistry = DeferredRegister.create(NucleoplasmNuclide.MOD_ID, Registry.ITEM_REGISTRY);
 
 
 ## 使用枚举
@@ -27,9 +17,9 @@
             id = name().toLowerCase(Locale.ROOT);
         }
 
-        public static void init(NRegistry<Item> registry) {
+        public static void init(DeferredRegister<Item> registry) {
             for (ExampleRegItem value : values()) {
-                value.supplier = registry.add(value.id, value.item);
+                value.supplier = registry.register(value.id, value.item);
             }
             registry.register();
         }
@@ -43,3 +33,6 @@
     public static void init() {
         ExampleRegItem.init(items);
     }
+	
+## 例如
+nucleoplasm nuclide 模组的RegItem类

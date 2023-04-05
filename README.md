@@ -1,16 +1,15 @@
 # Nucleoplasm
 
 - [简体中文](README_szh.md)
+- [tutorial list](tutorials/list.md)
 - [no one sees the license](LICENSE)
 - [update record](changelog.txt)
 - Welcome to the Nucleoplasm mod! We are committed to super science fiction.
 
 # projects
 
-- [ ] nucleoplasm
-
-# nucleoplasm
-    
+- [x] nucleoplasm-api       30%
+- [x] nucleoplasm-nuclide    1%
 
 ## Goals
 
@@ -20,7 +19,7 @@
   - [ ] Neutron Separator Machine
   - [ ] Neutron Exchange Machine
 - [ ] Block & Item
-    - [x] Periodic Table of Elements
+    - [ ] Periodic Table of Elements
     - [ ] Nuclide
     - [ ] Chemical Compound
     - [ ] Covalent Bond
