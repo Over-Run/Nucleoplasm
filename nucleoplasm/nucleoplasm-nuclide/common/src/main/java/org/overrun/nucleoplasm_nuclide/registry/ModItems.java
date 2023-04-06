@@ -1,5 +1,6 @@
 package org.overrun.nucleoplasm_nuclide.registry;
 
+import dev.architectury.platform.Mod;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -109,18 +110,9 @@ public enum ModItems {
         return item.get();
     }
     public static final DeferredRegister<Item> registry = DeferredRegister.create(MOD_ID, Registries.ITEM);
-    public static final RegistrySupplier<ElementItem> HYDROGEN =
-            registry.register(ModItems.hydrogen.name, ModItems.hydrogen.item);
-    public static final RegistrySupplier<ElementItem> HELIUM =
-            registry.register(ModItems.helium.name, ModItems.helium.item);
-    public static final RegistrySupplier<ElementItem> LITHIUM =
-            registry.register(ModItems.lithium.name, ModItems.lithium.item);
-    public static final RegistrySupplier<ElementItem> BERYLLIUM =
-            registry.register(ModItems.beryllium.name, ModItems.beryllium.item);
-    public static final RegistrySupplier<ElementItem> BORON =
-            registry.register(ModItems.boron.name, ModItems.boron.item);
-    public static final RegistrySupplier<ElementItem> CARBON =
-            registry.register(ModItems.carbon.name, ModItems.carbon.item);
+    public static final RegistrySupplier<ElementItem>
+            HYDROGEN, HELIUM, LITHIUM,
+            BERYLLIUM, BORON, CARBON;
     public static final RegistrySupplier<ElementItem> NITROGEN =
             registry.register(ModItems.nitrogen.name, ModItems.nitrogen.item);
     public static final RegistrySupplier<ElementItem> OXYGEN =
@@ -237,23 +229,42 @@ public enum ModItems {
             registry.register(ModItems.europium.name, ModItems.europium.item);
     public static final RegistrySupplier<ElementItem> GADOLINIUM =
             registry.register(ModItems.gadolinium.name, ModItems.gadolinium.item);
-    public static final RegistrySupplier<ElementItem> TERBIUM = registry.register(ModItems.terbium.name, ModItems.terbium.item);
-    public static final RegistrySupplier<ElementItem> DYSPROSIUM = registry.register(ModItems.dysprosium.name, ModItems.dysprosium.item);
-    public static final RegistrySupplier<ElementItem> HOLMIUM = registry.register(ModItems.holmium.name, ModItems.holmium.item);
-    public static final RegistrySupplier<ElementItem> ERBIUM = registry.register(ModItems.erbium.name, ModItems.erbium.item);
-    public static final RegistrySupplier<ElementItem> THULIUM = registry.register(ModItems.thulium.name, ModItems.thulium.item);
-    public static final RegistrySupplier<ElementItem> YTTERBIUM = registry.register(ModItems.ytterbium.name, ModItems.ytterbium.item);
-    public static final RegistrySupplier<ElementItem> LUTETIUM = registry.register(ModItems.lutetium.name, ModItems.lutetium.item);
-    public static final RegistrySupplier<ElementItem> HAFNIUM = registry.register(ModItems.hafnium.name, ModItems.hafnium.item);
-    public static final RegistrySupplier<ElementItem> TANTALUM = registry.register(ModItems.tantalum.name, ModItems.tantalum.item);
-    public static final RegistrySupplier<ElementItem> TUNGSTEN = registry.register(ModItems.tungsten.name, ModItems.tungsten.item);
-    public static final RegistrySupplier<ElementItem> RHENIUM = registry.register(ModItems.rhenium.name, ModItems.rhenium.item);
-    public static final RegistrySupplier<ElementItem> OSMIUM = registry.register(ModItems.osmium.name, ModItems.osmium.item);
-    public static final RegistrySupplier<ElementItem> IRIDIUM = registry.register(ModItems.iridium.name, ModItems.iridium.item);
-    public static final RegistrySupplier<ElementItem> PLATINUM = registry.register(ModItems.platinum.name, ModItems.platinum.item);
-    public static final RegistrySupplier<ElementItem> GOLD = registry.register(ModItems.gold.name, ModItems.gold.item);
-    public static final RegistrySupplier<ElementItem> MERCURY = registry.register(ModItems.mercury.name, ModItems.mercury.item);
+    public static final RegistrySupplier<ElementItem> TERBIUM =
+            registry.register(ModItems.terbium.name, ModItems.terbium.item);
+    public static final RegistrySupplier<ElementItem> DYSPROSIUM =
+            registry.register(ModItems.dysprosium.name, ModItems.dysprosium.item);
+
+    public static final RegistrySupplier<ElementItem>
+            HOLMIUM, ERBIUM, THULIUM, YTTERBIUM, LUTETIUM, HAFNIUM, TANTALUM, TUNGSTEN, RHENIUM, OSMIUM, IRIDIUM, PLATINUM, GOLD, MERCURY;
+
+    static {
+        HYDROGEN = register(ModItems.hydrogen);
+        HELIUM = register(ModItems.helium);
+        LITHIUM = register(ModItems.lithium);
+        BERYLLIUM = register(ModItems.beryllium);
+        BORON = register(ModItems.boron);
+        CARBON = register(ModItems.carbon);
+
+        HOLMIUM = register(ModItems.holmium);
+        ERBIUM = register(ModItems.erbium);
+        THULIUM = register(ModItems.thulium);
+        YTTERBIUM = register(ModItems.ytterbium);
+        LUTETIUM = register(ModItems.lutetium);
+        HAFNIUM = register(ModItems.hafnium);
+        TANTALUM = register(ModItems.tantalum);
+        TUNGSTEN = register(ModItems.tungsten);
+        RHENIUM = register(ModItems.rhenium);
+        OSMIUM = register(ModItems.osmium);
+        IRIDIUM = register(ModItems.iridium);
+        PLATINUM = register(ModItems.platinum);
+        GOLD = register(ModItems.gold);
+        MERCURY = register(ModItems.mercury);
+    }
     public static void init() {
         registry.register();
+    }
+
+    public static RegistrySupplier<ElementItem> register(ModItems item) {
+        return registry.register(item.name, item.item);
     }
 }
