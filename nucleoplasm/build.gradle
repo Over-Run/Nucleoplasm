@@ -1,0 +1,10 @@
+
+group = maven_group
+version = mod_version
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
