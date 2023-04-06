@@ -67,6 +67,32 @@ public enum ModItems {
     tellurium(properties -> new ElementItem(new Item.Properties(), 52)),
     iodine(properties -> new ElementItem(new Item.Properties(), 53)),
     xenon(properties -> new ElementItem(new Item.Properties(), 54)),
+    cesium(properties -> new ElementItem(new Item.Properties(), 55)),
+    barium(properties -> new ElementItem(new Item.Properties(), 56)),
+    lanthanum(properties -> new ElementItem(new Item.Properties(), 57)),
+    cerium(properties -> new ElementItem(new Item.Properties(), 58)),
+    praseodymium(properties -> new ElementItem(new Item.Properties(), 59)),
+    neodymium(properties -> new ElementItem(new Item.Properties(), 60)),
+    promethium(properties -> new ElementItem(new Item.Properties(), 61)),
+    samarium(properties -> new ElementItem(new Item.Properties(), 62)),
+    europium(properties -> new ElementItem(new Item.Properties(), 63)),
+    gadolinium(properties -> new ElementItem(new Item.Properties(), 64)),
+    terbium(properties -> new ElementItem(new Item.Properties(), 65)),
+    dysprosium(properties -> new ElementItem(new Item.Properties(), 66)),
+    holmium(properties -> new ElementItem(new Item.Properties(), 67)),
+    erbium(properties -> new ElementItem(new Item.Properties(), 68)),
+    thulium(properties -> new ElementItem(new Item.Properties(), 69)),
+    ytterbium(properties -> new ElementItem(new Item.Properties(), 70)),
+    lutetium(properties -> new ElementItem(new Item.Properties(), 71)),
+    hafnium(properties -> new ElementItem(new Item.Properties(), 72)),
+    tantalum(properties -> new ElementItem(new Item.Properties(), 73)),
+    tungsten(properties -> new ElementItem(new Item.Properties(), 74)),
+    rhenium(properties -> new ElementItem(new Item.Properties(), 75)),
+    osmium(properties -> new ElementItem(new Item.Properties(), 76)),
+    iridium(properties -> new ElementItem(new Item.Properties(), 77)),
+    platinum(properties -> new ElementItem(new Item.Properties(), 78)),
+    gold(properties -> new ElementItem(new Item.Properties(), 79)),
+    mercury(properties -> new ElementItem(new Item.Properties(), 80)),
     ;
     private final String name;
     private final Supplier<ElementItem> item;
@@ -183,10 +209,50 @@ public enum ModItems {
             registry.register(ModItems.indium.name, ModItems.indium.item);
     public static final RegistrySupplier<ElementItem> TIN =
             registry.register(ModItems.tin.name, ModItems.tin.item);
-    public static final RegistrySupplier<ElementItem> ANTIMONY = registry.register(ModItems.antimony.name, ModItems.antimony.item);
-    public static final RegistrySupplier<ElementItem> TELLURIUM = registry.register(ModItems.tellurium.name, ModItems.tellurium.item);
-    public static final RegistrySupplier<ElementItem> IODINE = registry.register(ModItems.iodine.name, ModItems.iodine.item);
-    public static final RegistrySupplier<ElementItem> XENON = registry.register(ModItems.xenon.name, ModItems.xenon.item);
+    public static final RegistrySupplier<ElementItem> ANTIMONY =
+            registry.register(ModItems.antimony.name, ModItems.antimony.item);
+    public static final RegistrySupplier<ElementItem> TELLURIUM =
+            registry.register(ModItems.tellurium.name, ModItems.tellurium.item);
+    public static final RegistrySupplier<ElementItem> IODINE =
+            registry.register(ModItems.iodine.name, ModItems.iodine.item);
+    public static final RegistrySupplier<ElementItem> XENON =
+            registry.register(ModItems.xenon.name, ModItems.xenon.item);
+    public static final RegistrySupplier<ElementItem> CESIUM =
+            registry.register(ModItems.cesium.name, ModItems.cesium.item);
+    public static final RegistrySupplier<ElementItem> BARIUM =
+            registry.register(ModItems.barium.name, ModItems.barium.item);
+    public static final RegistrySupplier<ElementItem> LANTHANUM =
+            registry.register(ModItems.lanthanum.name, ModItems.lanthanum.item);
+    public static final RegistrySupplier<ElementItem> CERIUM =
+            registry.register(ModItems.cerium.name, ModItems.cerium.item);
+    public static final RegistrySupplier<ElementItem> PRASEODYMIUM =
+            registry.register(ModItems.praseodymium.name, ModItems.praseodymium.item);
+    public static final RegistrySupplier<ElementItem> NEODYMIUM =
+            registry.register(ModItems.neodymium.name, ModItems.neodymium.item);
+    public static final RegistrySupplier<ElementItem> PROMETHIUM =
+            registry.register(ModItems.promethium.name, ModItems.promethium.item);
+    public static final RegistrySupplier<ElementItem> SAMARIUM =
+            registry.register(ModItems.samarium.name, ModItems.samarium.item);
+    public static final RegistrySupplier<ElementItem> EUROPIUM =
+            registry.register(ModItems.europium.name, ModItems.europium.item);
+    public static final RegistrySupplier<ElementItem> GADOLINIUM =
+            registry.register(ModItems.gadolinium.name, ModItems.gadolinium.item);
+    public static final RegistrySupplier<ElementItem> TERBIUM = registry.register(ModItems.terbium.name, ModItems.terbium.item);
+    public static final RegistrySupplier<ElementItem> DYSPROSIUM = registry.register(ModItems.dysprosium.name, ModItems.dysprosium.item);
+    public static final RegistrySupplier<ElementItem> HOLMIUM = registry.register(ModItems.holmium.name, ModItems.holmium.item);
+    public static final RegistrySupplier<ElementItem> ERBIUM = registry.register(ModItems.erbium.name, ModItems.erbium.item);
+    public static final RegistrySupplier<ElementItem> THULIUM = registry.register(ModItems.thulium.name, ModItems.thulium.item);
+    public static final RegistrySupplier<ElementItem> YTTERBIUM = registry.register(ModItems.ytterbium.name, ModItems.ytterbium.item);
+    public static final RegistrySupplier<ElementItem> LUTETIUM = registry.register(ModItems.lutetium.name, ModItems.lutetium.item);
+    public static final RegistrySupplier<ElementItem> HAFNIUM = registry.register(ModItems.hafnium.name, ModItems.hafnium.item);
+    public static final RegistrySupplier<ElementItem> TANTALUM = registry.register(ModItems.tantalum.name, ModItems.tantalum.item);
+    public static final RegistrySupplier<ElementItem> TUNGSTEN = registry.register(ModItems.tungsten.name, ModItems.tungsten.item);
+    public static final RegistrySupplier<ElementItem> RHENIUM = registry.register(ModItems.rhenium.name, ModItems.rhenium.item);
+    public static final RegistrySupplier<ElementItem> OSMIUM = registry.register(ModItems.osmium.name, ModItems.osmium.item);
+    public static final RegistrySupplier<ElementItem> IRIDIUM = registry.register(ModItems.iridium.name, ModItems.iridium.item);
+    public static final RegistrySupplier<ElementItem> PLATINUM = registry.register(ModItems.platinum.name, ModItems.platinum.item);
+    public static final RegistrySupplier<ElementItem> GOLD = registry.register(ModItems.gold.name, ModItems.gold.item);
+    public static final RegistrySupplier<ElementItem> MERCURY = registry.register(ModItems.mercury.name, ModItems.mercury.item);
     public static void init() {
         registry.register();
     }
