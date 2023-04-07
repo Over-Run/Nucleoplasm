@@ -99,6 +99,38 @@ public enum ModItems {
     polonium(properties -> new ElementItem(new Item.Properties(), 84)),
     astatine(properties -> new ElementItem(new Item.Properties(), 85)),
     radon(properties -> new ElementItem(new Item.Properties(), 86)),
+    francium(properties -> new ElementItem(new Item.Properties(), 87)),
+    radium(properties -> new ElementItem(new Item.Properties(), 88)),
+    actinium(properties -> new ElementItem(new Item.Properties(), 89)),
+    thorium(properties -> new ElementItem(new Item.Properties(), 90)),
+    protactinium(properties -> new ElementItem(new Item.Properties(), 91)),
+    uranium(properties -> new ElementItem(new Item.Properties(), 92)),
+    neptunium(properties -> new ElementItem(new Item.Properties(), 93)),
+    plutonium(properties -> new ElementItem(new Item.Properties(), 94)),
+    americium(properties -> new ElementItem(new Item.Properties(), 95)),
+    curium(properties -> new ElementItem(new Item.Properties(), 96)),
+    berkelium(properties -> new ElementItem(new Item.Properties(), 97)),
+    californium(properties -> new ElementItem(new Item.Properties(), 98)),
+    einsteinium(properties -> new ElementItem(new Item.Properties(), 99)),
+    mendelevium(properties -> new ElementItem(new Item.Properties(), 100)),
+    fermium(properties -> new ElementItem(new Item.Properties(), 101)),
+    nobelium(properties -> new ElementItem(new Item.Properties(), 102)),
+    lawrencium(properties -> new ElementItem(new Item.Properties(), 103)),
+    rutherfordium(properties -> new ElementItem(new Item.Properties(), 104)),
+    dubnium(properties -> new ElementItem(new Item.Properties(), 105)),
+    seaborgium(properties -> new ElementItem(new Item.Properties(), 106)),
+    bohrium(properties -> new ElementItem(new Item.Properties(), 107)),
+    hassium(properties -> new ElementItem(new Item.Properties(), 108)),
+    meitnerium(properties -> new ElementItem(new Item.Properties(), 109)),
+    darmstadtium(properties -> new ElementItem(new Item.Properties(), 110)),
+    roentgenium(properties -> new ElementItem(new Item.Properties(), 111)),
+    copernicium(properties -> new ElementItem(new Item.Properties(), 112)),
+    nihonium(properties -> new ElementItem(new Item.Properties(), 113)),
+    flerovium(properties -> new ElementItem(new Item.Properties(), 114)),
+    moscovium(properties -> new ElementItem(new Item.Properties(), 115)),
+    livermorium(properties -> new ElementItem(new Item.Properties(), 116)),
+    tennessine(properties -> new ElementItem(new Item.Properties(), 117)),
+    oganesson(properties -> new ElementItem(new Item.Properties(), 118)),
     ;
     private final String name;
     private final Supplier<ElementItem> item;
@@ -121,95 +153,129 @@ public enum ModItems {
             Na, Mg,                                                                                                 Al, Si,  P,  S, Cl, Ar,
              K, Ca, Sc,                                                         Ti,  V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr,
             Rb, Sr,  Y,                                                         Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te,  I, Xe,
-            Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta,  W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn;
+            Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta,  W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn,
+            Fr, Ra, Ac, Th, Pa,  U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og;
 
     static {
-        H = register(ModItems.hydrogen);//H
-        He = register(ModItems.helium);//He
-        Li = register(ModItems.lithium);//Li
-        Be = register(ModItems.beryllium);//Be
-        B = register(ModItems.boron);//B
-        C = register(ModItems.carbon);//C
-        N = register(ModItems.nitrogen);//N
-        O = register(ModItems.oxygen);//O
-        F = register(ModItems.fluorine);//F
-        Ne = register(ModItems.neon);//Ne
-        Na = register(ModItems.sodium);//Na
-        Mg = register(ModItems.magnesium);//Mg
-        Al = register(ModItems.aluminium);//Al
-        Si = register(ModItems.silicon);//Si
-        P = register(ModItems.phosphorus);//P
-        S = register(ModItems.sulfur);//S
-        Cl = register(ModItems.chlorine);//Cl
-        Ar = register(ModItems.argon);//Ar
-        K = register(ModItems.potassium);//K
-        Ca = register(ModItems.calcium);//Ca
-        Sc = register(ModItems.scandium);//Sc
-        Ti = register(ModItems.titanium);//Ti
-        V = register(ModItems.vanadium);//V
-        Cr = register(ModItems.chromium);//Cr
-        Mn = register(ModItems.magnesium);//Mn
-        Fe = register(ModItems.iron);//Fe
-        Co = register(ModItems.cobalt);//Co
-        Ni = register(ModItems.nickel);//Ni
-        Cu = register(ModItems.copper);//Cu
-        Zn = register(ModItems.zinc);//Zn
-        Ga = register(ModItems.gallium);//Ga
-        Ge = register(ModItems.germanium);//Ge
-        As = register(ModItems.arsenic);//As
-        Se = register(ModItems.selenium);//Se
-        Br = register(ModItems.bromine);//Br
-        Kr = register(ModItems.krypton);//Kr
-        Rb = register(ModItems.rubidium);//Ru
-        Sr = register(ModItems.strontium);
-        Y = register(ModItems.yttrium);
-        Zr = register(ModItems.zirconium);
-        Nb = register(ModItems.niobium);
-        Mo = register(ModItems.molybdenum);
-        Tc = register(ModItems.technetium);
-        Ru = register(ModItems.ruthenium);
-        Rh =  register(ModItems.rhodium);
-        Pd = register(ModItems.palladium);
-        Ag = register(ModItems.silver);
-        Cd = register(ModItems.cadmium);
-        In = register(ModItems.indium);
-        Sn = register(ModItems.tin);
-        Sb = register(ModItems.antimony);
-        Te = register(ModItems.tellurium);
-        I = register(ModItems.iodine);
-        Xe = register(ModItems.xenon);
-        Cs = register(ModItems.cesium);
-        Ba = register(ModItems.barium);
-        La = register(ModItems.lanthanum);
-        Ce = register(ModItems.cerium);
-        Pr = register(ModItems.praseodymium);
-        Nd = register(ModItems.neodymium);
-        Pm = register(ModItems.promethium);
-        Sm = register(ModItems.samarium);
-        Eu = register(ModItems.europium);
-        Gd = register(ModItems.gadolinium);
-        Tb = register(ModItems.terbium);
-        Dy = register(ModItems.dysprosium);
-        Ho = register(ModItems.holmium);
-        Er = register(ModItems.erbium);
-        Tm = register(ModItems.thulium);
-        Yb = register(ModItems.ytterbium);
-        Lu = register(ModItems.lutetium);
-        Hf = register(ModItems.hafnium);
-        Ta = register(ModItems.tantalum);
-        W = register(ModItems.tungsten);
-        Re = register(ModItems.rhenium);
-        Os = register(ModItems.osmium);
-        Ir = register(ModItems.iridium);
-        Pt = register(ModItems.platinum);
-        Au = register(ModItems.gold);//Au
-        Hg = register(ModItems.mercury);//Hg
-        Tl = register(ModItems.thallium);
-        Pb = register(ModItems.lead);
-        Bi = register(ModItems.bismuth);
-        Po = register(ModItems.polonium);
-        At = register(ModItems.astatine);
-        Rn = register(ModItems.radon);
+        H = register(hydrogen);
+        He = register(helium);
+        Li = register(lithium);
+        Be = register(beryllium);
+        B = register(boron);
+        C = register(carbon);
+        N = register(nitrogen);
+        O = register(oxygen);
+        F = register(fluorine);
+        Ne = register(neon);
+        Na = register(sodium);
+        Mg = register(magnesium);
+        Al = register(aluminium);
+        Si = register(silicon);
+        P = register(phosphorus);
+        S = register(sulfur);
+        Cl = register(chlorine);
+        Ar = register(argon);
+        K = register(potassium);
+        Ca = register(calcium);
+        Sc = register(scandium);
+        Ti = register(titanium);
+        V = register(vanadium);
+        Cr = register(chromium);
+        Mn = register(magnesium);
+        Fe = register(iron);
+        Co = register(cobalt);
+        Ni = register(nickel);
+        Cu = register(copper);
+        Zn = register(zinc);
+        Ga = register(gallium);
+        Ge = register(germanium);
+        As = register(arsenic);
+        Se = register(selenium);
+        Br = register(bromine);
+        Kr = register(krypton);
+        Rb = register(rubidium);
+        Sr = register(strontium);
+        Y = register(yttrium);
+        Zr = register(zirconium);
+        Nb = register(niobium);
+        Mo = register(molybdenum);
+        Tc = register(technetium);
+        Ru = register(ruthenium);
+        Rh =  register(rhodium);
+        Pd = register(palladium);
+        Ag = register(silver);
+        Cd = register(cadmium);
+        In = register(indium);
+        Sn = register(tin);
+        Sb = register(antimony);
+        Te = register(tellurium);
+        I = register(iodine);
+        Xe = register(xenon);
+        Cs = register(cesium);
+        Ba = register(barium);
+        La = register(lanthanum);
+        Ce = register(cerium);
+        Pr = register(praseodymium);
+        Nd = register(neodymium);
+        Pm = register(promethium);
+        Sm = register(samarium);
+        Eu = register(europium);
+        Gd = register(gadolinium);
+        Tb = register(terbium);
+        Dy = register(dysprosium);
+        Ho = register(holmium);
+        Er = register(erbium);
+        Tm = register(thulium);
+        Yb = register(ytterbium);
+        Lu = register(lutetium);
+        Hf = register(hafnium);
+        Ta = register(tantalum);
+        W = register(tungsten);
+        Re = register(rhenium);
+        Os = register(osmium);
+        Ir = register(iridium);
+        Pt = register(platinum);
+        Au = register(gold);
+        Hg = register(mercury);
+        Tl = register(thallium);
+        Pb = register(lead);
+        Bi = register(bismuth);
+        Po = register(polonium);
+        At = register(astatine);
+        Rn = register(radon);
+        Fr = register(francium);
+        Ra = register(radium);
+        Ac = register(actinium);
+        Th = register(thorium);
+        Pa = register(protactinium);
+        U = register(uranium);
+        Np = register(neptunium);
+        Pu = register(plutonium);
+        Am = register(americium);
+        Cm = register(curium);
+        Bk = register(berkelium);
+        Cf = register(californium);
+        Es = register(einsteinium);
+        Fm = register(fermium);
+        Md = register(mendelevium);
+        No = register(nobelium);
+        Lr = register(lawrencium);
+        Rf = register(rutherfordium);
+        Db = register(dubnium);
+        Sg = register(seaborgium);
+        Bh = register(bohrium);
+        Hs = register(hassium);
+        Mt = register(meitnerium);
+        Ds = register(darmstadtium);
+        Rg = register(roentgenium);
+        Cn = register(copernicium);
+        Nh = register(nihonium);
+        Fl = register(flerovium);
+        Mc = register(moscovium);
+        Lv = register(livermorium);
+        Ts = register(tennessine);
+        Og = register(oganesson);
+
     }
     public static void init() {
         registry.register();
