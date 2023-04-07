@@ -17,7 +17,7 @@ import static net.minecraft.network.chat.Component.empty;
 import static net.minecraft.network.chat.Component.nullToEmpty;
 
 public class ElementItem extends Item {
-    private final int proton;
+    public final int proton;
     public ElementItem(Properties properties) {
         super(properties);
         proton = 0;

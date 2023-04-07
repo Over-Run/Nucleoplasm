@@ -1,15 +1,24 @@
 package org.overrun.nucleoplasm_nuclide.decay;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import org.overrun.nucleoplasm_nuclide.item.ElementItem;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static org.overrun.nucleoplasm_nuclide.registry.ModItems.*;
-import static org.overrun.nucleoplasm_nuclide.registry.ModItems.H;
 
 public class DecayUtils {
     public static final Map<Integer, Integer> mass_number = new HashMap<>();
+
+    public static ItemStack stack(ElementItem item, int mass_number) {
+        ItemStack stack = new ItemStack(item);
+        CompoundTag nbt = new CompoundTag();
+        nbt.putInt("neutron", mass_number - item.proton);
+        nbt.putInt("quantity_electricity", mass_number);//电子量
+        return stack;
+    }
+
     static {
         putArrayStep(1,2, 7,2);
         putArrayStep(3,4, 12,3);
@@ -62,6 +71,7 @@ public class DecayUtils {
         putArray(113, 115, 290);
         putArray(116, 118, 294);
     }
+
     public static void putArrayStep/*跳级递增*/(int key, int key2, int vaule, int step) {int v = vaule;for (int i = key;i <= key2; i++) {mass_number.put(i, v);v+=step+1;}}
     public static void putArrayAdd/*递增*/(int key, int key2, int value) {putArrayStep(key, key2, value, 0);}
     public static void putArray/*等同*/(int key, int key2, int value) {for (int i = key;i <= key2; i++) mass_number.put(i, value);}

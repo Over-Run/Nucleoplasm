@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "nucleoplasm_chemistry",
+  "version": "${version}",
+  "name": "nucleoplasm_chemistry",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "nucleoplasm_chemistry.mixins.json",
+    "nucleoplasm_chemistry-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": ">=1.19.4"
+  }
+}
