@@ -13,6 +13,7 @@ import java.util.function.Supplier;
 import static org.overrun.nucleoplasm_nuclide.Nucleoplasm_nuclide.MOD_ID;
 
 public enum ModItems {
+    element(properties -> new ElementItem(new Item.Properties(), -1)),
     hydrogen(properties -> new ElementItem(new Item.Properties(), 1)),
     helium(properties -> new ElementItem(new Item.Properties(), 2)),
     lithium(properties -> new ElementItem(new Item.Properties(), 3)),
@@ -147,6 +148,7 @@ public enum ModItems {
         return item.get();
     }
     public static final DeferredRegister<Item> registry = DeferredRegister.create(MOD_ID, Registries.ITEM);
+    public static final RegistrySupplier<ElementItem> elementItem = register(element);
     public static final RegistrySupplier<ElementItem>
           //1A                                                                                                                          0
        /*1*/ H,/*2A*/                                                                                             /*3A  4A  5A  6A  7A*/He,
