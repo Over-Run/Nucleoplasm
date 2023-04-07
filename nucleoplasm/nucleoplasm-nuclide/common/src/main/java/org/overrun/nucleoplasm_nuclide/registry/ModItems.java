@@ -148,13 +148,14 @@ public enum ModItems {
     }
     public static final DeferredRegister<Item> registry = DeferredRegister.create(MOD_ID, Registries.ITEM);
     public static final RegistrySupplier<ElementItem>
-             H,                                                                                                                         He,
-            Li, Be,                                                                                                  B,  C,  N,  O,  F, Ne,
-            Na, Mg,                                                                                                 Al, Si,  P,  S, Cl, Ar,
-             K, Ca, Sc,                                                         Ti,  V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr,
-            Rb, Sr,  Y,                                                         Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te,  I, Xe,
-            Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta,  W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn,
-            Fr, Ra, Ac, Th, Pa,  U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og;
+          //1A                                                                                                                          0
+       /*1*/ H,/*2A*/                                                                                             /*3A  4A  5A  6A  7A*/He,
+       /*2*/Li, Be,                                                                                                  B,  C,  N,  O,  F, Ne,
+       /*3*/Na, Mg,/*3B*/                                                      /*4B  5B 6B  7B   8   8   8  1B  2B*/Al, Si,  P,  S, Cl, Ar,
+       /*4*/ K, Ca, Sc,                                                         Ti,  V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ga, Ge, As, Se, Br, Kr,
+       /*5*/Rb, Sr,  Y,                                                         Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te,  I, Xe,
+       /*6*/Cs, Ba, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta,  W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn,
+       /*7*/Fr, Ra, Ac, Th, Pa,  U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og;
 
     static {
         H = register(hydrogen);
