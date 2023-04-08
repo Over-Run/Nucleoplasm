@@ -20,7 +20,7 @@ dependencies {
     modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${architectury_version}"
-
+    modApi("io.github.over-run:nucleoplasm_nuclide-fabric:1.0.0.0")
     common(project(path: ":nucleoplasm-chemistry:common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":nucleoplasm-chemistry:common", configuration: "transformProductionFabric")) { transitive false }
 }

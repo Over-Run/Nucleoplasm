@@ -8,3 +8,14 @@ repositories {
 
 dependencies {
 }
+
+subprojects {
+    repositories {
+        maven {
+            name = 'TerraformersMC'
+            url = 'https://maven.terraformersmc.com/releases'
+        }
+        mavenCentral()
+        mavenLocal()
+    }
+}
