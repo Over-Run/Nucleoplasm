@@ -8,8 +8,14 @@ pluginManagement {
 }
 
 rootProject.name = 'nucleoplasm'
-include(":nucleoplasm-nuclide")
-include(":nucleoplasm-nuclide:common")
-include(":nucleoplasm-nuclide:fabric")
-include(":nucleoplasm-nuclide:forge")
 
+def a = new String[] {
+    "nuclide",
+    "chemistry"
+}
+for (final def dir in a ) {
+    include(":nucleoplasm-$dir")
+    include(":nucleoplasm-$dir:common")
+    include(":nucleoplasm-$dir:fabric")
+    include(":nucleoplasm-$dir:forge")
+}

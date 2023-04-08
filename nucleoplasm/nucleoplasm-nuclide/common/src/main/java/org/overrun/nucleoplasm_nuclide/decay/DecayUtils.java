@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.overrun.nucleoplasm_nuclide.registry.ModItems.*;
-import static org.overrun.nucleoplasm_nuclide.registry.ModItems.H;
 
 public class DecayUtils {
     public static final Map<Integer, Integer> mass_number = new HashMap<>();

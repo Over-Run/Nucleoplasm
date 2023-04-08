@@ -14,7 +14,6 @@ import org.overrun.nucleoplasm_nuclide.decay.DecayUtils;
 import java.util.List;
 
 import static net.minecraft.network.chat.Component.empty;
-import static net.minecraft.network.chat.Component.nullToEmpty;
 
 public class ElementItem extends Item {
     private final int proton;
