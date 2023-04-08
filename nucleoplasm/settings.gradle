@@ -9,14 +9,12 @@ pluginManagement {
 
 rootProject.name = 'nucleoplasm'
 include(":nucleoplasm-nuclide")
-include(":nucleoplasm-chemistry")
-
 include(":nucleoplasm-nuclide:common")
-include(":nucleoplasm-chemistry:common")
-
 include(":nucleoplasm-nuclide:fabric")
-include(":nucleoplasm-chemistry:fabric")
-
 include(":nucleoplasm-nuclide:forge")
+
+include(":nucleoplasm-chemistry")
+include(":nucleoplasm-chemistry:common")
+include(":nucleoplasm-chemistry:fabric")
 include(":nucleoplasm-chemistry:forge")
 
