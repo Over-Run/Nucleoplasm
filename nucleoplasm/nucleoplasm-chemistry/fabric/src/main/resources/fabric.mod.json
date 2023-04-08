@@ -16,6 +16,12 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.19",
-    "minecraft": ">=1.19.4"
+    "minecraft": ">=1.19.4",
+    "nucleoplasm_nuclide": "${version}"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": "nucleoplasm_nuclide"
+    }
   }
 }
