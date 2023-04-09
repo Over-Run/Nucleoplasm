@@ -18,7 +18,7 @@ dependencies {
     forge "net.minecraftforge:forge:${forge_version}"
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-forge:${architectury_version}"
-    modApi("io.github.over-run:nucleoplasm_nuclide-forge:1.0.0.0")
+    modApi("io.github.over-run:nucleoplasm_nuclide-forge:$nuclide_version_depends")
     common(project(path: ":nucleoplasm-chemistry:common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":nucleoplasm-chemistry:common", configuration: "transformProductionForge")) { transitive = false }
 }
