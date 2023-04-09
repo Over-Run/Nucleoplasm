@@ -64,6 +64,52 @@ public class DecayUtils {
     public static void putArrayStep/*跳级递增*/(int key, int key2, int vaule, int step) {int v = vaule;for (int i = key;i <= key2; i++) {mass_number.put(i, v);v+=step+1;}}
     public static void putArrayAdd/*递增*/(int key, int key2, int value) {putArrayStep(key, key2, value, 0);}
     public static void putArray/*等同*/(int key, int key2, int value) {for (int i = key;i <= key2; i++) mass_number.put(i, value);}
+    public static ItemStack getStack(String elementName) {
+        return new ItemStack(
+                switch (elementName) {
+                    case "H"    -> H.get();     case "He"   -> He.get();    case "Li"   -> Li.get();
+                    case "Be"   -> Be.get();    case "B"    -> B.get();     case "C"    -> C.get();
+                    case "N"    -> N.get();     case "O"    -> O.get();     case "F"    -> F.get();
+                    case "Ne"   -> Ne.get();    case "Na"   -> Na.get();    case "Mg"   -> Mg.get();
+                    case "Al"   -> Al.get();    case "Si"   -> Si.get();    case "P"    -> P.get();
+                    case "S"    -> S.get();     case "Cl"   -> Cl.get();    case "Ar"   -> Ar.get();
+                    case "K"    -> K.get();     case "Ca"   -> Ca.get();    case "Sc"   -> Sc.get();
+                    case "Ti"   -> Ti.get();    case "V"    -> V.get();     case "Cr"   -> Cr.get();
+                    case "Mn"   -> Mn.get();    case "Fe"   -> Fe.get();    case "Co"   -> Co.get();
+                    case "Ni"   -> Ni.get();    case "Cu"   -> Cu.get();    case "Zn"   -> Zn.get();
+                    case "Ga"   -> Ga.get();    case "Ge"   -> Ge.get();    case "As"   -> As.get();
+                    case "Se"   -> Se.get();    case "Br"   -> Br.get();    case "Kr"   -> Kr.get();
+                    case "Rb"   -> Rb.get();    case "Sr"   -> Sr.get();    case "Y"    -> Y.get();
+                    case "Zr"   -> Zr.get();    case "Nb"   -> Nb.get();    case "Mo"   -> Mo.get();
+                    case "Tc"   -> Tc.get();    case "Ru"   -> Ru.get();    case "Rh"   -> Rh.get();
+                    case "Pd"   -> Pd.get();    case "Ag"   -> Ag.get();    case "Cd"   -> Cd.get();
+                    case "In"   -> In.get();    case "Sn"   -> Sn.get();    case "Sb"   -> Sb.get();
+                    case "Te"   -> Te.get();    case "I"    -> I.get();     case "Xe"   -> Xe.get();
+                    case "Cs"   -> Cs.get();    case "Ba"   -> Ba.get();    case "La"   -> La.get();
+                    case "Ce"   -> Ce.get();    case "Pr"   -> Pr.get();    case "Nd"   -> Nd.get();
+                    case "Pm"   -> Pm.get();    case "Sm"   -> Sm.get();    case "Eu"   -> Eu.get();
+                    case "Gd"   -> Gd.get();    case "Tb"   -> Tb.get();    case "Dy"   -> Dy.get();
+                    case "Ho"   -> Ho.get();    case "Er"   -> Er.get();    case "Tm"   -> Tm.get();
+                    case "Yb"   -> Yb.get();    case "Lu"   -> Lu.get();    case "Hf"   -> Hf.get();
+                    case "Ta"   -> Ta.get();    case "W"    -> W.get();     case "Re"   -> Re.get();
+                    case "Os"   -> Os.get();    case "Ir"   -> Ir.get();    case "Pt"   -> Pt.get();
+                    case "Au"   -> Au.get();    case "Hg"   -> Hg.get();    case "Tl"   -> Tl.get();
+                    case "Pb"   -> Pb.get();    case "Bi"   -> Bi.get();    case "Po"   -> Po.get();
+                    case "At"   -> At.get();    case "Rn"   -> Rn.get();    case "Fr"   -> Fr.get();
+                    case "Ra"   -> Ra.get();    case "Ac"   -> Ac.get();    case "Th"   -> Th.get();
+                    case "Pa"   -> Pa.get();    case "U"    -> U.get();     case "Np"   -> Np.get();
+                    case "Pu"   -> Pu.get();    case "Am"   -> Am.get();    case "Cm"   -> Cm.get();
+                    case "Bk"   -> Bk.get();    case "Cf"   -> Cf.get();    case "Es"   -> Es.get();
+                    case "Fm"   -> Fm.get();    case "Md"   -> Md.get();    case "No"   -> No.get();
+                    case "Lr"   -> Lr.get();    case "Rf"   -> Rf.get();    case "Db"   -> Db.get();
+                    case "Sg"   -> Sg.get();    case "Bh"   -> Bh.get();    case "Hs"   -> Hs.get();
+                    case "Mt"   -> Mt.get();    case "Ds"   -> Ds.get();    case "Rg"   -> Rg.get();
+                    case "Cn"   -> Cn.get();    case "Nh"   -> Nh.get();    case "Fl"   -> Fl.get();
+                    case "Mc"   -> Mc.get();    case "Lv"   -> Lv.get();    case "Ts"   -> Ts.get();
+                    case "Og"   -> Og.get();    default     -> elementItem.get();
+                }
+        );
+    }
     public static ItemStack getStack(int proton) {
         return new ItemStack(
                 switch (proton) {
@@ -77,17 +123,18 @@ public class DecayUtils {
                     case 8  -> O.get();
                     case 9  -> F.get();
                     case 10 -> Ne.get();
-                    case 12 -> Na.get();
-                    case 13 -> Mg.get();
-                    case 14 -> Al.get();
-                    case 15 -> Si.get();
-                    case 16 -> P.get();
-                    case 17 -> S.get();
-                    case 18 -> Cl.get();
-                    case 19 -> Ar.get();
-                    case 20 -> K.get();
-                    case 21 -> Ca.get();
-                    case 22 -> Sc.get();
+                    case 11 -> Na.get();
+                    case 12 -> Mg.get();
+                    case 13 -> Al.get();
+                    case 14 -> Si.get();
+                    case 15 -> P.get();
+                    case 16 -> S.get();
+                    case 17 -> Cl.get();
+                    case 18 -> Ar.get();
+                    case 19 -> K.get();
+                    case 20 -> Ca.get();
+                    case 21 -> Sc.get();
+                    case 22 -> Ti.get();
                     case 23 -> V.get();
                     case 24 -> Cr.get();
                     case 25 -> Mn.get();
