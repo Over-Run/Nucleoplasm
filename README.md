@@ -4,12 +4,16 @@
 - [tutorial list](tutorials/list.md)
 - [no one sees the license](LICENSE)
 - [update record](changelog.txt)
-- Welcome to the Nucleoplasm mod! We are committed to super science fiction.
 
-# projects
+Welcome to the Nucleoplasm mod! We are committed to super science fiction.
 
-- [x] nucleoplasm-api       30%
-- [x] nucleoplasm-nuclide    1%
+# projects list
+
+- [x] nucleoplasm-api            30%
+- [x] nucleoplasm-nuclide         1%
+- [x] nucleoplasm-chemistry       0%
+- [x] nucleoplasm-feature-repair  0%
+- [x] nucleoplasm_interstellar    0%
 
 ## Goals
 

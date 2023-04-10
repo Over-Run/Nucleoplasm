@@ -7,10 +7,13 @@
 
 欢迎使用核质模组！我们将致力于科幻的极致。
 
-# projects
+# 项目列表
 
-- [x] nucleoplasm-api       30%
-- [x] nucleoplasm-nuclide    1%
+- [x] nucleoplasm-api            30%
+- [x] nucleoplasm-nuclide         1%
+- [x] nucleoplasm-chemistry       0%
+- [x] nucleoplasm-feature-repair  0%
+- [x] nucleoplasm_interstellar    0%
 
 ## Goals
 
