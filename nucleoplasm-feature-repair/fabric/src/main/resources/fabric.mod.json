@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "nucleoplasm_api",
   "version": "${version}",
-  "name": "nucleoplasm_api",
+  "name": "nucleoplasm_feature_repair",
   "description": "",
   "authors": [],
   "contact": {},
@@ -11,8 +11,8 @@
   "environment": "*",
   "entrypoints": {},
   "mixins": [
-    "nucleoplasm_api.mixins.json",
-    "nucleoplasm_api-common.mixins.json"
+    "nucleoplasm_feature_repair.mixins.json",
+    "nucleoplasm_feature_repair-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.19",
